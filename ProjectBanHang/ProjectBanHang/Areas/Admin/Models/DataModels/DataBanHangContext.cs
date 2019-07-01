@@ -19,5 +19,6 @@ namespace ProjectBanHang.Areas.Admin.Models.DataModels
         public DbSet<Color> Colors { get; set; }
         public DbSet<Size> Sizes { get; set; }
 
+        public System.Data.Entity.DbSet<ProjectBanHang.Areas.Admin.Models.DataModels.Category> Categories { get; set; }
     }
 }
