@@ -5,17 +5,18 @@
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+<p></p>
+<button class="btn btn-success">
+    @Html.ActionLink("Thêm mới", "Create")
+</button>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Name)
+            Tên
         </th>
-        <th></th>
+        <th>
+            Thao tác
+        </th>
     </tr>
 
 @foreach (var item in Model) {
