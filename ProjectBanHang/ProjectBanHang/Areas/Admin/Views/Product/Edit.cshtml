@@ -10,7 +10,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Product</h4>
         <hr />
@@ -34,6 +34,23 @@
         </div>
 
         <div class="form-group">
+            @Html.LabelFor(model => model.Amount, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Amount, new { htmlAttributes = new { @class = "form-control", Type = "number" } })
+                @Html.ValidationMessageFor(model => model.Amount, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CodeColor, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CodeColor, new { htmlAttributes = new { @class = "form-control", Type = "color" } })
+                @Html.ValidationMessageFor(model => model.CodeColor, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
             @Html.LabelFor(model => model.Description, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
@@ -42,18 +59,27 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.ModelsID, "ModelsID", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Image, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("ModelsID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.ModelsID, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "form-control upload_files" } })
+                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+                <img src="" id="showimg" data-ng-form="Image" width="250" />
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.CategoryId, "CategoryId", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.CategoryId, "Hãng", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("CategoryId", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Status, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Status, new { htmlAttributes = new { @class = "form-control", Type = "checkbox" } })
+                @Html.ValidationMessageFor(model => model.Status, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -65,6 +91,28 @@
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+<button>
+    @Html.ActionLink("Quay lại danh sách", "Index")
+</button>
+
+@section Scripts1{
+    <script src="~/Areas/Admin/AssetsAdmin/ckeditor/ckeditor.js"></script>
+    <script src="~/Areas/Admin/AssetsAdmin/ckfinder/ckfinder.js"></script>
+
+    <script>
+        $(function () {
+            CKEDITOR.replace("Description");
+            let valip = $(".upload_files").val();
+            $("#showimg").attr("src", valip);
+            $(".upload_files").click(function () {
+                var ip = $(this);
+                var finder = new CKFinder();
+                finder.selectActionFunction = function (url) {
+                    ip.val(url);
+                    $("img[data-ng-form='" + ip.attr("id") + "']").attr("src", url);
+                }
+                finder.popup();
+            })
+        });
+    </script>
+}

@@ -18,7 +18,7 @@ namespace ProjectBanHang.Areas.Admin.Controllers
         // GET: Admin/Category
         public ActionResult Index()
         {
-            return View(_category.GetAll());
+            return View(_category.GetAll ());
         }
 
         public ActionResult Create()
@@ -27,6 +27,7 @@ namespace ProjectBanHang.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(Category c)
         {
             if (ModelState.IsValid)
@@ -48,6 +49,7 @@ namespace ProjectBanHang.Areas.Admin.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Edit(Category ca)
         {
             if (ModelState.IsValid)

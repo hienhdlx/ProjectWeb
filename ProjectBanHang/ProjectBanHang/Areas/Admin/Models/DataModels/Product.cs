@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -10,21 +11,38 @@ namespace ProjectBanHang.Areas.Admin.Models.DataModels
     public class Product
     {
         [Key]
+        [Required]
         public int Id { get; set; }
         [Required]
+        [DisplayName("Tên sản phẩm")]
         public string Name { get; set; }
         [Required]
+        [DisplayName("Giá")]
         public double Price { get; set; }
+
+        [DataType(DataType.MultilineText)]
+        [DisplayName("Mô tả")]
         public string Description { get; set; }
-        [Required]
-        public int ModelsID { get; set; }
+
+        [DataType(DataType.ImageUrl)]
+        [DisplayName("Ảnh")]
+        public string Image { get; set; }
+
+        [DisplayName("Số lượng")]
+        public int Amount { get; set; }
+
+        [DisplayName("Color")]
+        public string CodeColor { get; set; }
+
+        [DisplayName("Trạng thái")]
+        public bool Status { get; set; }
+
+        [DisplayName("Hãng")]
         public int CategoryId { get; set; }
 
-        //thuộc tính liên kết
-        [ForeignKey("ModelsID")]
-        public Model Modeles { get; set; }
+       
         [ForeignKey("CategoryId")]
-        public Category Categories { get; set; }
+        public virtual Category Categories { get; set; }
 
 
     }

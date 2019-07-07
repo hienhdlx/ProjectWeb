@@ -10,7 +10,7 @@ namespace ProjectBanHang.Areas.Admin.Models.DataModels
     {
         public DataBanHangContext():base("name=DataBanHang")
         {
-                
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<DataBanHangContext, Migrations.Configuration>("DataBanHang"));
         }
 
         //tạo các thuộc tính DbSet<T>

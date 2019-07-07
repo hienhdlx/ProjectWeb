@@ -1,0 +1,31 @@
+﻿@model ProjectBanHang.Areas.Admin.Models.DataModels.Category
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Thông tin chi tiết</h2>
+
+<div>
+    <h4>Hãng giày</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <button class="btn btn-1b">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id })
+    </button>
+    <button class="btn btn-success">
+        @Html.ActionLink("Quay lại danh sách", "Index")
+    </button>
+</p>

@@ -9,51 +9,50 @@
 
 <div>
     <h4>Product</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Categories.Name)
-        </dt>
+   
+    <table class="table table-bordered">
+        <tr>
+            <th scope="col">@Html.DisplayNameFor(model => model.Categories.Name)</th>
+            <td>@Html.DisplayFor(model => model.Categories.Name)</td>
+        </tr>
+        <tr>
+            <th scope="col">@Html.DisplayNameFor(model => model.Name)</th>
+            <td>@Html.DisplayFor(model => model.Name)</td>
+        </tr>
+        <tr>
+            <th scope="col">@Html.DisplayNameFor(model => model.Price)</th>
+            <td>@Html.DisplayFor(model => model.Price)</td>
+        </tr>
+        <tr>
+            <th scope="col">@Html.DisplayNameFor(model => model.Amount)</th>
+            <td>@Html.DisplayFor(model => model.Amount)</td>
+        </tr>
+        <tr>
+            <th scope="col">@Html.DisplayNameFor(model => model.CodeColor)</th>
+            <td>@Html.DisplayFor(model => model.CodeColor)</td>
+        </tr>
+        <tr>
+            <th scope="col">@Html.DisplayNameFor(model => model.Description)</th>
+            <td>@Html.Raw(Model.Description)</td>
+        </tr>
+        <tr>
+            <th scope="col">@Html.DisplayNameFor(model => model.Image)</th>
+            <td>
+                <img src="@Model.Image" width="225px" />
+            </td>
+        </tr>
+        <tr>
+            <th scope="col">@Html.DisplayNameFor(model => model.Status)</th>
+            <td>@Html.DisplayFor(model => model.Status)</td>
+        </tr>
 
-        <dd>
-            @Html.DisplayFor(model => model.Categories.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Modeles.Id)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Modeles.Id)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-
-    </dl>
+    </table>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    <button class="btn btn-1b">
+        @Html.ActionLink("Chỉnh sửa", "Edit", new { id = Model.Id }) 
+    </button>
+    <button class="btn btn-success">
+        @Html.ActionLink("Quay lại danh sách", "Index")
+    </button>
 </p>

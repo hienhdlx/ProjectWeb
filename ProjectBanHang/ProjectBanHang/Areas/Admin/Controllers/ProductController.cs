@@ -5,20 +5,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Data.Entity;
 
 namespace ProjectBanHang.Areas.Admin.Controllers
 {
     public class ProductController : Controller
     {
+
         private Repository<Product> _product;
+        private Repository<Category> _category;
         public ProductController()
         {
             _product = new Repository<Product>();
+            _category = new Repository<Category>();
         }
         // GET: Admin/Product
         public ActionResult Index()
         {
-            return View(_product.GetAll());
+            return View(_product._tbl.Include(x => x.Categories).ToList());
         }
 
         public ActionResult Details(int id)
@@ -28,13 +32,17 @@ namespace ProjectBanHang.Areas.Admin.Controllers
 
         public ActionResult Create()
         {
+            ViewBag.CategoryId = new SelectList(_category.GetAll(), "Id", "Name");
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public ActionResult Create(Product pro)
         {
+            ViewBag.CategoryId = new SelectList(_category.GetAll(), "Id", "Name");
+
             if (ModelState.IsValid)
             {
                 _product.Add(pro);
@@ -45,6 +53,7 @@ namespace ProjectBanHang.Areas.Admin.Controllers
 
         public ActionResult Edit(int id)
         {
+            ViewBag.CategoryId = new SelectList(_category.GetAll(), "Id", "Name", _product.Get(id).CategoryId);
             return View(_product.Get(id));
         }
 
@@ -52,12 +61,19 @@ namespace ProjectBanHang.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Product p)
         {
+            ViewBag.CategoryId = new SelectList(_category.GetAll(), "Id", "Name", _product.Get(p.CategoryId));
             if (ModelState.IsValid)
             {
                 _product.Edit(p);
                 return RedirectToAction("Edit");
             }
             return View(); 
+        }
+
+        public ActionResult Delete(int id)
+        {
+            _product.Remove(id);
+            return RedirectToAction("Index");
         }
     }
 }

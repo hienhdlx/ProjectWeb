@@ -233,3 +233,8 @@ G:\Net MVC\ProjectWeb\ProjectBanHang\ProjectBanHang\obj\Debug\ProjectBanHang.csp
 G:\Net MVC\ProjectWeb\ProjectBanHang\ProjectBanHang\obj\Debug\ProjectBanHang.csproj.CopyComplete
 G:\Net MVC\ProjectWeb\ProjectBanHang\ProjectBanHang\obj\Debug\ProjectBanHang.dll
 G:\Net MVC\ProjectWeb\ProjectBanHang\ProjectBanHang\obj\Debug\ProjectBanHang.pdb
+G:\Net MVC\ProjectWeb\ProjectBanHang\ProjectBanHang\obj\Debug\ProjectBanHang.csprojAssemblyReference.cache
+G:\Net MVC\ProjectWeb\ProjectBanHang\ProjectBanHang\obj\Debug\ProjectBanHang.Migrations.InitialCreate.resources
+G:\Net MVC\ProjectWeb\ProjectBanHang\ProjectBanHang\obj\Debug\ProjectBanHang.csproj.GenerateResource.cache
+G:\Net MVC\ProjectWeb\ProjectBanHang\ProjectBanHang\bin\CKFinder.dll
+G:\Net MVC\ProjectWeb\ProjectBanHang\ProjectBanHang\bin\CKFinder.pdb

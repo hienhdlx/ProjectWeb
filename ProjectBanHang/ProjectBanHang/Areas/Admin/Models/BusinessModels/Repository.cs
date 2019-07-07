@@ -10,7 +10,7 @@ namespace ProjectBanHang.Areas.Admin.Models.BusinessModels
     public class Repository<T> : IRepository<T> where T:class
     {
         private DataBanHangContext db;
-        private DbSet<T> _tbl;
+        public DbSet<T> _tbl { get; private set; }
         public Repository()
         {
             //đối tượng context
@@ -28,6 +28,7 @@ namespace ProjectBanHang.Areas.Admin.Models.BusinessModels
         public void Edit(T entity)
         {
             db.Entry(entity).State = EntityState.Modified;
+            db.SaveChanges();
         }
 
         public T Get(object id)
