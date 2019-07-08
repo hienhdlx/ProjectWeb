@@ -238,3 +238,7 @@ G:\Net MVC\ProjectWeb\ProjectBanHang\ProjectBanHang\obj\Debug\ProjectBanHang.Mig
 G:\Net MVC\ProjectWeb\ProjectBanHang\ProjectBanHang\obj\Debug\ProjectBanHang.csproj.GenerateResource.cache
 G:\Net MVC\ProjectWeb\ProjectBanHang\ProjectBanHang\bin\CKFinder.dll
 G:\Net MVC\ProjectWeb\ProjectBanHang\ProjectBanHang\bin\CKFinder.pdb
+E:\to-do-learn\dot.net MVC\Project\ProjectBanHang\ProjectBanHang\bin\CKFinder.dll
+E:\to-do-learn\dot.net MVC\Project\ProjectBanHang\ProjectBanHang\bin\CKFinder.pdb
+E:\to-do-learn\dot.net MVC\Project\ProjectBanHang\ProjectBanHang\obj\Debug\ProjectBanHang.Migrations.InitialCreate.resources
+E:\to-do-learn\dot.net MVC\Project\ProjectBanHang\ProjectBanHang\obj\Debug\ProjectBanHang.csproj.GenerateResource.cache
