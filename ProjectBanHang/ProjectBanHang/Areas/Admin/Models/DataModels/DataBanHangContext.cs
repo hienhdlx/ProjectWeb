@@ -20,5 +20,7 @@ namespace ProjectBanHang.Areas.Admin.Models.DataModels
         public DbSet<Size> Sizes { get; set; }
 
         public System.Data.Entity.DbSet<ProjectBanHang.Areas.Admin.Models.DataModels.Category> Categories { get; set; }
+
+        public System.Data.Entity.DbSet<ProjectBanHang.Areas.Admin.Models.DataModels.ProfileUser> ProfileUsers { get; set; }
     }
 }

@@ -135,6 +135,7 @@
     <Compile Include="Areas\Admin\Controllers\ColorController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProfileUserController.cs" />
     <Compile Include="Areas\Admin\Controllers\SizeController.cs" />
     <Compile Include="Areas\Admin\Models\BusinessModels\IRepository.cs" />
     <Compile Include="Areas\Admin\Models\BusinessModels\Repository.cs" />
@@ -143,6 +144,7 @@
     <Compile Include="Areas\Admin\Models\DataModels\DataBanHangContext.cs" />
     <Compile Include="Areas\Admin\Models\DataModels\Model.cs" />
     <Compile Include="Areas\Admin\Models\DataModels\Product.cs" />
+    <Compile Include="Areas\Admin\Models\DataModels\ProfileUser.cs" />
     <Compile Include="Areas\Admin\Models\DataModels\Size.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1765,6 +1767,10 @@
     <Content Include="Areas\Admin\AssetsAdmin\ckfinder\skins\bootstrap\assets\fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="Areas\Admin\AssetsAdmin\ckfinder\userfiles\.htaccess" />
     <Content Include="Areas\Admin\Views\Product\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\ProfileUser\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ProfileUser\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ProfileUser\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ProfileUser\Details.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

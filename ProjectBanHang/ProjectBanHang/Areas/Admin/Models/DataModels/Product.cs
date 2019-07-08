@@ -11,7 +11,7 @@ namespace ProjectBanHang.Areas.Admin.Models.DataModels
     public class Product
     {
         [Key]
-        [Required]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [Required]
         [DisplayName("Tên sản phẩm")]
