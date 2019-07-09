@@ -1254,6 +1254,7 @@
     <Content Include="Areas\Admin\AssetsAdmin\css\icons\material-design-iconic-font\css\materialdesignicons.min.css" />
     <Content Include="Areas\Admin\AssetsAdmin\css\icons\material-design-iconic-font\fonts\Material-Design-Iconic-Font.svg" />
     <Content Include="Areas\Admin\AssetsAdmin\css\icons\material-design-iconic-font\fonts\materialdesignicons-webfont.svg" />
+    <Content Include="Areas\Admin\AssetsAdmin\css\MyStyle.css" />
     <Content Include="Areas\Admin\AssetsAdmin\css\spinners.css" />
     <Content Include="Areas\Admin\AssetsAdmin\css\style.css" />
     <Content Include="Areas\Admin\AssetsAdmin\js\custom.js" />

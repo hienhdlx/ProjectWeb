@@ -1,7 +1,6 @@
 ﻿@model ProjectBanHang.Areas.Admin.Models.DataModels.ProfileUser
 
 @{
-    ViewBag.Title = "Create";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
 }
 
@@ -16,79 +15,77 @@
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="row">
         <div class="col-md-4 col-xs-12">
-            <div class="white-box">
-                <div class="user-bg">
-                    <img src="" data-ng-form="Image" class="ckf_fileInput" id="ckf_fileInput" width="250" />
-                    @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "btn btn-custom showurl" } })
-                </div>
+            <div style="background-color: antiquewhite; margin: 21px" class="user-bg">
+                <img src="" data-ng-form="Image" class="ckf_fileInput" id="ckf_fileInput" style="width: 100%" />
+                @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "showurl" } })
+                @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
             </div>
-            <input type="button" class="btn btn-custom upload_files" id="btnshowimg" value="Upload Ảnh" />
+            <input type="button" style="margin-left: 115px; text-align: center" class="btn btn-custom upload_files" id="btnshowimg" value="Upload Ảnh" />
         </div>
         <div class="col-md-8 col-xs-12">
-            <div class="white-box">
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "col-md-12" })
-                    <div class="col-md-12">
-                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control form-control-line" } })
-                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-                    </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "col-md-12" })
+                <div class="col-md-12">
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control form-control-line" } })
+                    @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
                 </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "col-md-12" })
-                    <div class="col-md-12">
-                        @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control form-control-line" } })
-                        @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
-                    </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "col-md-12" })
+                <div class="col-md-12">
+                    @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control form-control-line" } })
+                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
                 </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "col-md-12" })
-                    <div class="col-md-12">
-                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control form-control-line", Type = "password" } })
-                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
-                    </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "col-md-12" })
+                <div class="col-md-12">
+                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control form-control-line", Type = "password" } })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
                 </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "col-md-12" })
-                    <div class="col-md-12">
-                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control form-control-line", Type = "email" } })
-                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
-                    </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "col-md-12" })
+                <div class="col-md-12">
+                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control form-control-line", Type = "email" } })
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
                 </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "col-md-12" })
-                    <div class="col-md-12">
-                        @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control form-control-line" } })
-                        @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
-                    </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "col-md-12" })
+                <div class="col-md-12">
+                    @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control form-control-line" } })
+                    @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
                 </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "col-md-12" })
-                    <div class="col-md-12">
-                        @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control form-control-line" } })
-                        @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
-                    </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "col-md-12" })
+                <div class="col-md-12">
+                    @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control form-control-line" } })
+                    @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
                 </div>
-                <div class="form-group">
-                    @Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "col-md-12" })
-                    <div class="col-md-12">
-                        @Html.DropDownListFor(model => model.Gender, new SelectList(ViewBag._Gender, "Id", "Text"), new
-                        {
-                            @class = "form-control form-control-line"
-                        })
-                        @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
-                    </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "col-md-12" })
+                <div class="col-md-12">
+                    @Html.DropDownListFor(model => model.Gender, new SelectList(ViewBag._Gender, "Id", "Text"), new
+                    {
+                        @class = "form-control form-control-line"
+                    })
+                    @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
                 </div>
-                @*<div class="form-group">
-                        @Html.LabelFor(model => model.Role, htmlAttributes: new { @class = "col-md-12"})
-                        <div class="col-md-12">
-                            @Html.DropDownListFor(model => model.Role, new SelectList(ViewBag._Role), new { @class = "form-control form-control-line"})
-                            @Html.ValidationMessageFor(model =>model.Role, "", new { @class = "text-danger"})
-                        </div>
-                    </div>*@
-                <div class="form-group">
-                    <div class="col-sm-12">
-                        <button class="btn btn-success">Update Profile</button>
-                    </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Role, htmlAttributes: new { @class = "col-md-12" })
+                <div class="col-md-12">
+                    @Html.DropDownListFor(model => model.Role, new SelectList(ViewBag._Role, "Id", "Text"), new { @class = "form-control form-control-line" })
+                    @Html.ValidationMessageFor(model => model.Role, "", new { @class = "text-danger" })
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <button class="btn btn-success">Thêm mới</button>
                 </div>
             </div>
         </div>
@@ -99,20 +96,22 @@
     @Html.ActionLink("Quay lại danh sách", "Index");
 </button>
 
-@section Scripts2{
+@section Scripts{
     <script src="~/Areas/Admin/AssetsAdmin/ckfinder/ckfinder.js"></script>
     <script>
         $(function () {
             $(".upload_files").click(function () {
                 var finder = new CKFinder();
-                debugger;
                 finder.selectActionFunction = function (url) {
+                    $("#ckf_fileInput").attr("src", url);
                     $(".showurl").val(url);
-                    $("img[data-ng-form='" + ip.attr("id") + "']").attr("src", url);
-                    $("#ckf_fileInput").attr("src", "/AssetsAdmin/Uploads/images/09400.jpg");
                 }
                 finder.popup();
             });
+        });
+        $(document).ready(function () {
+            $(".showurl").hide();
+
         });
     </script>
 }

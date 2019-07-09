@@ -10,12 +10,14 @@ namespace ProjectBanHang.Areas.Admin.Models.DataModels
 {
     public class ProfileUser
     {
+        private DateTime _date = DateTime.Now;
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [DisplayName("Tên")]
         public string Name { get; set; }
         [DisplayName("Ảnh")]
+        [Required]
         public string Image { get; set; }
         [Required]
         [DisplayName("Tên đăng nhập")]
@@ -38,8 +40,8 @@ namespace ProjectBanHang.Areas.Admin.Models.DataModels
         [DisplayName("Giới tính")]
         public int Gender { get; set; }
         [DataType(DataType.Date)]
-        public DateTime CreateDate { get; set; }
-        public string Role { get; set; }
-        public bool Status { get; set; }
+        public DateTime CreateDate { get { return _date; } set { _date = value; } }
+        [DisplayName("Quyền")]
+        public int Role { get; set; }
     }
 }
