@@ -24,6 +24,17 @@ namespace ProjectBanHang.Areas.Admin.Controllers
 
         public ActionResult Create()
         {
+            //var lstgender = new List<string>() { "Nam", "Nữ", "Giới tính khác" };
+            //var lstrole = new List<string>() { "Quản lý", "Nhân viên", "Khách hàng" };
+            //ViewBag._Role = lstrole;
+            var _gender = new List<Gender>()
+            {
+                new Gender(){Id = 1, Text = "Nam"},
+                new Gender(){Id = 2, Text = "Nữ"},
+                new Gender(){Id = 3, Text = "Giới tính khác"}
+            };
+
+            ViewBag._Gender = _gender;
             return View();
         }
 
@@ -31,6 +42,14 @@ namespace ProjectBanHang.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(ProfileUser user)
         {
+            var _gender = new List<Gender>()
+            {
+                new Gender(){Id = 1, Text = "Nam"},
+                new Gender(){Id = 2, Text = "Nữ"},
+                new Gender(){Id = 3, Text = "Giới tính khác"}
+            };
+
+            ViewBag._Gender = _gender;
             if (ModelState.IsValid)
             {
                 _user.Add(user);
@@ -66,5 +85,11 @@ namespace ProjectBanHang.Areas.Admin.Controllers
             }
             return View();
         }
+    }
+
+    class Gender
+    {
+        public int Id { get; set; }
+        public string Text { get; set; }
     }
 }

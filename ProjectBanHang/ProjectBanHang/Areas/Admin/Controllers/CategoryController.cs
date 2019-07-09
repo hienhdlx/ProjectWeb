@@ -32,7 +32,13 @@ namespace ProjectBanHang.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                _category.Add(c);
+                using (var db = new DataBanHangContext())
+                {
+                    if (!db.Categories.Any(w => w.Name.Equals(c.Name)))
+                    {
+                        _category.Add(c);
+                    }
+                }
                 return RedirectToAction("Index");
             }
             return View();           

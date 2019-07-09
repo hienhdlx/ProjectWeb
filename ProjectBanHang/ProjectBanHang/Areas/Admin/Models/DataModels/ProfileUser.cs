@@ -36,16 +36,10 @@ namespace ProjectBanHang.Areas.Admin.Models.DataModels
         [DataType(DataType.PhoneNumber)]
         public string Phone { get; set; }
         [DisplayName("Giới tính")]
-        public Gender Gender { get; set; }
+        public int Gender { get; set; }
         [DataType(DataType.Date)]
         public DateTime CreateDate { get; set; }
         public string Role { get; set; }
         public bool Status { get; set; }
-    }
-
-    public enum Gender
-    {
-        Nam,
-        Nữ
     }
 }
