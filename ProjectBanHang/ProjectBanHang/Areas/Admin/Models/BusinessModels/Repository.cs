@@ -46,5 +46,23 @@ namespace ProjectBanHang.Areas.Admin.Models.BusinessModels
             _tbl.Remove(Get(id)); 
             db.SaveChanges();
         }
+
+        public bool Login(string userName, string passWord)
+        {
+            var result = db.ProfileUsers.Count(x => x.UserName == userName && x.Password == passWord);
+            if (result > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false; 
+            }
+        }
+
+        public ProfileUser GetByName(string userName)
+        {
+            return db.ProfileUsers.SingleOrDefault(x => x.UserName == userName);
+        }
     }
 }
