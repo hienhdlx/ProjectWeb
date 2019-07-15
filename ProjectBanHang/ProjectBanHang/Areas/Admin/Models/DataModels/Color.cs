@@ -12,7 +12,7 @@ namespace ProjectBanHang.Areas.Admin.Models.DataModels
     {
         [Key]
         [Required]
-        public int Id { get; set; }
+        public int Id { get; set; } 
         [Required]
         [DisplayName("Tên màu")]
         public string Name { get; set; }

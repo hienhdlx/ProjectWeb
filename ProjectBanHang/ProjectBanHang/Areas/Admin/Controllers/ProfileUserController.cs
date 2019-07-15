@@ -66,8 +66,8 @@ namespace ProjectBanHang.Areas.Admin.Controllers
             ViewBag._Gender = _gender;
             if (ModelState.IsValid)
             {
-                _user.Add(user);
-                return RedirectToAction("Index");
+                _user.Add(user); 
+                return RedirectToAction("Index"); 
             }
             return View();
         }

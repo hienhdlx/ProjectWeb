@@ -11,7 +11,7 @@ namespace ProjectBanHang.Areas.Admin.Models.DataModels
     public class Category
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)] 
         public int Id { get; set; }
         [Required]
         [DisplayName("Tên hãng")]

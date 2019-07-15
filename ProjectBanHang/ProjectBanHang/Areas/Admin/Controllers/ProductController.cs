@@ -20,7 +20,7 @@ namespace ProjectBanHang.Areas.Admin.Controllers
             _category = new Repository<Category>();
         }
         // GET: Admin/Product
-        public ActionResult Index()
+        public ActionResult Index() 
         {
             return View(_product._tbl.Include(x => x.Categories).ToList());
         }

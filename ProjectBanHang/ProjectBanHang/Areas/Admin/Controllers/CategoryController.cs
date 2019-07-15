@@ -10,7 +10,7 @@ namespace ProjectBanHang.Areas.Admin.Controllers
 {
     public class CategoryController : Controller
     {
-        private Repository<Category> _category;
+        private Repository<Category> _category; 
         public CategoryController()
         {
             _category = new Repository<Category>();

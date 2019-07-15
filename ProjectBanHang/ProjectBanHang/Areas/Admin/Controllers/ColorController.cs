@@ -10,7 +10,7 @@ namespace ProjectBanHang.Areas.Admin.Controllers
 {
     public class ColorController : Controller
     {
-        private Repository<Color> _color;
+        private Repository<Color> _color; 
         public ColorController()
         {
             _color = new Repository<Color>();
