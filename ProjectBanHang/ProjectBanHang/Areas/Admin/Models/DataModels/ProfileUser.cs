@@ -35,7 +35,7 @@ namespace ProjectBanHang.Areas.Admin.Models.DataModels
         public string Address { get; set; }
         [Required]
         [DisplayName("Điện thoại")]
-        [DataType(DataType.PhoneNumber)]
+        [DataType(DataType.PhoneNumber)] 
         public string Phone { get; set; }
         [DisplayName("Giới tính")]
         public int Gender { get; set; }

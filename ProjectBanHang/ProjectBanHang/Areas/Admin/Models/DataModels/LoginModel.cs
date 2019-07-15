@@ -12,6 +12,6 @@ namespace ProjectBanHang.Areas.Admin.Models.DataModels
         public string UserName { get; set; }
         [Required(ErrorMessage ="Mời bạn nhập Password")]
         public string Password { get; set; }
-        public bool RememberMe { get; set; } 
+        public bool RememberMe { get; set; }  
     }
 }

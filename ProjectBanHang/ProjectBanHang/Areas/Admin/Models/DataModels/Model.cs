@@ -11,7 +11,7 @@ namespace ProjectBanHang.Areas.Admin.Models.DataModels
 
         //thuộc tính liên kết 
         public Color color { get; set; }
-        public Size size { get; set; }
+        public Size size { get; set; } 
 
     }
 }

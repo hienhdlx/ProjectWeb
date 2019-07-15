@@ -34,7 +34,7 @@ namespace ProjectBanHang.Areas.Admin.Controllers
                     var userSession = new UserLogin(); 
                     userSession.UserId = user.Id;
                     userSession.UserName = user.UserName;
-                    Session.Add(CommonConstants.USER_SESSION, userSession); 
+                    Session.Add(CommonConstants.USER_SESSION, userSession);  
                     return RedirectToAction("Index", "Home");
                 }
                 else
