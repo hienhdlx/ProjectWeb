@@ -42,7 +42,7 @@
                 @using (Html.BeginForm("Login", "Login", FormMethod.Post, new { @class = "login100-form validate-form" }))
                 {
 
-                    @Html.ValidationSummary(false,"", new { @color = "red"})
+                    @Html.ValidationSummary(false)
                     <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
                         <span class="label-input100">Username</span>
                         @Html.TextBoxFor(model => model.UserName, new { @class = "input100", @autocomplete = "off", @placeholder = "Nhập UserName"})
@@ -57,12 +57,10 @@
 
                     <div class="flex-sb-m w-full p-b-30">
                         <div class="contact100-form-checkbox">
-                            @Html.CheckBoxFor(model => model.RememberMe, new { @class = "input-checkbox100", id = "ckb1", Type = "checkbox", @name = "remember-me"})
-                            <label class="label-checkbox100" for="ckb1">
-                                Remember me
-                            </label>
+                            
+                            @Html.CheckBoxFor(model => model.RememberMe, htmlAttributes: new { Type = "checkbox", })
+                            <label for="RememberMe" style="font-family: Poppins-Regular; font-size: 15px; color: #808080; line-height: 1.2; text-align: right; top:14px; left: -105px; display: inline">Remember me</label>
                         </div>
-
                         <div>
                             <a href="#" class="txt1">
                                 Forgot Password?
@@ -80,7 +78,7 @@
             </div>
         </div>
     </div>
-
+       
     <!--===============================================================================================-->
     <script src="~/Areas/Admin/AssetsAdmin/stylelogin/vendor/jquery/jquery-3.2.1.min.js"></script>
     <!--===============================================================================================-->

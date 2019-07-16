@@ -149,6 +149,7 @@
     <Compile Include="Areas\Admin\Models\DataModels\ProfileUser.cs" />
     <Compile Include="Areas\Admin\Models\DataModels\Size.cs" />
     <Compile Include="Common\CommonConstants.cs" />
+    <Compile Include="Common\Encryptor.cs" />
     <Compile Include="Common\UserLogin.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
