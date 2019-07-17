@@ -128,17 +128,12 @@ namespace ProjectBanHang.Areas.Admin.Controllers
             ViewBag._Role = _role;
             ViewBag._Gender = _gender;
 
-            var results = _user.EditUser(user);
-            //var encryptorMD5 = Encryptor.MD5Hash(user.Password);
-            //user.Password = encryptorMD5;
-            if (results)
+            if (ModelState.IsValid)
             {
+                _user.Edit(user);
                 return RedirectToAction("Index");
             }
-            else
-            {
-                return View();
-            }
+            return View();
         }
     }
 

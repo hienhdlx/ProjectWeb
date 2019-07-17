@@ -27,7 +27,7 @@ namespace ProjectBanHang.Areas.Admin.Models.BusinessModels
 
         public void Edit(T entity)
         {
-            db.Entry(entity).State = EntityState.Added;
+            db.Entry(entity).State = EntityState.Modified;
             db.SaveChanges();
         }
 
