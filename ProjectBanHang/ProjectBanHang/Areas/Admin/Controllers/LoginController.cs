@@ -27,8 +27,8 @@ namespace ProjectBanHang.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = _login.Login(login.UserName, login.Password);
-                if (result)
+                var result = _login.Login(login.UserName, Encryptor.MD5Hash(login.Password));
+                if (result == 1)
                 {
                     var user = _login.GetByName(login.UserName);
                     var userSession = new UserLogin(); 
@@ -36,6 +36,10 @@ namespace ProjectBanHang.Areas.Admin.Controllers
                     userSession.UserName = user.UserName;
                     Session.Add(CommonConstants.USER_SESSION, userSession);  
                     return RedirectToAction("Index", "Home");
+                }
+                else if (result == 2)
+                {
+                    ModelState.AddModelError("", "Mật khẩu không đúng");
                 }
                 else
                 {

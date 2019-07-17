@@ -47,16 +47,23 @@ namespace ProjectBanHang.Areas.Admin.Models.BusinessModels
             db.SaveChanges();
         }
 
-        public bool Login(string userName, string passWord)
+        public int Login(string userName, string passWord)
         {
-            var result = db.ProfileUsers.Count(x => x.UserName == userName && x.Password == passWord);
-            if (result > 0)
+            var result = db.ProfileUsers.SingleOrDefault(x => x.UserName == userName);
+            if (result == null)
             {
-                return true;
+                return 0;
             }
             else
             {
-                return false;  
+                if (result.Password == passWord)
+                {
+                    return 1;
+                }
+                else
+                {
+                    return 2;
+                }
             }
         }
 
