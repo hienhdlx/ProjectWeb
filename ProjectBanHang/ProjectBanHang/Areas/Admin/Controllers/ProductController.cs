@@ -59,13 +59,14 @@ namespace ProjectBanHang.Areas.Admin.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public ActionResult Edit(Product p)
         {
             ViewBag.CategoryId = new SelectList(_category.GetAll(), "Id", "Name", _product.Get(p.CategoryId));
             if (ModelState.IsValid)
             {
                 _product.Edit(p);
-                return RedirectToAction("Edit");
+                return RedirectToAction("Index");
             }
             return View(); 
         }

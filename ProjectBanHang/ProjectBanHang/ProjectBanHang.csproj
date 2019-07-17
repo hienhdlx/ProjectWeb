@@ -131,6 +131,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\ColorController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
@@ -1911,6 +1912,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\AssetsAdmin\Uploads\" />
     <Folder Include="Areas\Admin\Shared\" />
+    <Folder Include="Areas\Admin\Views\Base\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

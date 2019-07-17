@@ -26,7 +26,6 @@ namespace ProjectBanHang.Areas.Admin.Models.DataModels
         [Required]
         [DisplayName("Mật khẩu")]
         [StringLength(225)]
-        [DataType(DataType.Password)]
         public string Password { get; set; }
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }

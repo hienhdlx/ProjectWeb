@@ -27,8 +27,32 @@ namespace ProjectBanHang.Areas.Admin.Models.BusinessModels
 
         public void Edit(T entity)
         {
-            db.Entry(entity).State = EntityState.Modified;
+            db.Entry(entity).State = EntityState.Added;
             db.SaveChanges();
+        }
+
+        public bool EditUser(ProfileUser puser)
+        {
+            try
+            {
+                var user = db.ProfileUsers.Find(puser.Id);
+                user.Name = puser.Name;
+                user.UserName = puser.UserName;
+                user.Image = puser.Image;
+                user.Email = puser.Email;
+                user.Address = puser.Address;
+                user.Phone = puser.Phone;
+                user.Gender = puser.Gender;
+                user.CreateDate = DateTime.Now;
+                user.Role = user.Role;
+                db.Entry(puser).State = EntityState.Modified;
+                db.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
 
         public T Get(object id)

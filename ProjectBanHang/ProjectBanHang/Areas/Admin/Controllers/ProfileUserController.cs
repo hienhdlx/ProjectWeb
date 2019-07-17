@@ -1,5 +1,6 @@
 ﻿using ProjectBanHang.Areas.Admin.Models.BusinessModels;
 using ProjectBanHang.Areas.Admin.Models.DataModels;
+using ProjectBanHang.Common;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,7 +25,7 @@ namespace ProjectBanHang.Areas.Admin.Controllers
 
         public ActionResult Create()
         {
-           
+
             var _gender = new List<Gender>()
             {
                 new Gender(){Id = 1, Text = "Nam"},
@@ -66,8 +67,10 @@ namespace ProjectBanHang.Areas.Admin.Controllers
             ViewBag._Gender = _gender;
             if (ModelState.IsValid)
             {
-                _user.Add(user); 
-                return RedirectToAction("Index"); 
+                var encryptedMD5 = Encryptor.MD5Hash(user.Password);
+                user.Password = encryptedMD5;
+                _user.Add(user);
+                return RedirectToAction("Index");
             }
             return View();
         }
@@ -124,12 +127,18 @@ namespace ProjectBanHang.Areas.Admin.Controllers
 
             ViewBag._Role = _role;
             ViewBag._Gender = _gender;
-            if (ModelState.IsValid)
+
+            var results = _user.EditUser(user);
+            //var encryptorMD5 = Encryptor.MD5Hash(user.Password);
+            //user.Password = encryptorMD5;
+            if (results)
             {
-                _user.Edit(user);
                 return RedirectToAction("Index");
             }
-            return View();
+            else
+            {
+                return View();
+            }
         }
     }
 

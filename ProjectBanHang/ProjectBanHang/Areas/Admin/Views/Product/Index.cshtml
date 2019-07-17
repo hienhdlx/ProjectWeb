@@ -17,6 +17,9 @@
             Stt
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Image)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Categories.Name)
         </th>
         <th>
@@ -43,6 +46,9 @@
         <tr>
             <td>
                 @bien
+            </td>
+            <td>
+                <img src="@Url.Content(item.Image)" style="width: 70px" />
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Categories.Name)
