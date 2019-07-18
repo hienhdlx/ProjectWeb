@@ -6,12 +6,12 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.Entity;
+using PagedList;
 
 namespace ProjectBanHang.Areas.Admin.Controllers
 {
     public class ProductController : Controller
     {
-
         private Repository<Product> _product;
         private Repository<Category> _category;
         public ProductController()
@@ -20,8 +20,10 @@ namespace ProjectBanHang.Areas.Admin.Controllers
             _category = new Repository<Category>();
         }
         // GET: Admin/Product
-        public ActionResult Index() 
+        public ActionResult Index(int page = 1, int pageSize = 1) 
         {
+
+            var pagemodel = _product.GetAllListPage(page, pageSize);
             return View(_product._tbl.Include(x => x.Categories).ToList());
         }
 
@@ -65,7 +67,8 @@ namespace ProjectBanHang.Areas.Admin.Controllers
             ViewBag.CategoryId = new SelectList(_category.GetAll(), "Id", "Name", _product.Get(p.CategoryId));
             if (ModelState.IsValid)
             {
-                _product.Edit(p);
+                Repository<Product> _product2 = new Repository<Product>();
+                _product2.Edit(p);
                 return RedirectToAction("Index");
             }
             return View(); 

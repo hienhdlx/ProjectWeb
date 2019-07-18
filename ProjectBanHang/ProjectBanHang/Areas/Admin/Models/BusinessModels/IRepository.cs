@@ -8,6 +8,7 @@ namespace ProjectBanHang.Areas.Admin.Models.BusinessModels
 {
     public interface IRepository<T> where T : class
     {
+        IEnumerable<T> GetAllListPage(int page, int pageSize);
         List<T> GetAll();
         T Get(object id);
         void Add(T entity);

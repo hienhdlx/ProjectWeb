@@ -18,9 +18,9 @@ namespace ProjectBanHang.Areas.Admin.Controllers
         }
 
         // GET: Admin/ProfileUser
-        public ActionResult Index()
+        public ActionResult Index(int page, int pageSize)
         {
-            return View(_user.GetAll());
+            return View(_user.GetAllListPage(page, pageSize));
         }
 
         public ActionResult Create()

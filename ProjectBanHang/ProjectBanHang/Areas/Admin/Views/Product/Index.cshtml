@@ -1,5 +1,5 @@
-﻿@model IEnumerable<ProjectBanHang.Areas.Admin.Models.DataModels.Product>
-
+﻿@model PagedList.IPagedList<ProjectBanHang.Areas.Admin.Models.DataModels.Product>
+@using PagedList.Mvc;
 @{
     ViewBag.Title = "Index";
     Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
@@ -8,72 +8,63 @@
 
 <h2>Danh sách sản phẩm</h2>
 
-<button class="btn btn-success">
+<button class="btn btn-success m-l-20 hidden-xs hidden-sm waves-effect waves-light">
     @Html.ActionLink("Thêm mới", "Create")
 </button>
-<table class="table">
-    <tr>
-        <th>
-            Stt
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Image)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Categories.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Price)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Amount)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CodeColor)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Status)
-        </th>
-        <th>Thao tác</th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
-        bien++;
+<table class="table table-striped table-bordered table-hover">
+    <thead>
         <tr>
-            <td>
-                @bien
-            </td>
-            <td>
-                <img src="@Url.Content(item.Image)" style="width: 70px" />
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Categories.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Amount)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CodeColor)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Status)
-            </td>
-            <td>
-                <a class="fa fa-pencil" style="font-size:20px; padding-right: 10px" href="@Url.Action("Edit", "Product", new { id = item.Id })" aria-hidden="true"></a> 
-                <a class="fa fa-info" style="font-size:20px; padding-right: 10px" href="@Url.Action("Details", "Product", new { id = item.Id })" aria-hidden="true"></a> 
-                <a class="fa fa-trash" style="font-size:20px; padding-right: 10px" href="@Url.Action("Delete", "Product", new { id = item.Id})" aria-hidden="true"></a>
-            </td>
+            <th>Stt</th>
+            <th>Ảnh</th>
+            <th>Tên hãng</th>
+            <th>Tên sản phẩm</th>
+            <th>Giá</th>
+            <th>Số lượng</th>
+            <th>Màu sắc</th>
+            <th>Trạng thái</th>
+            <th>Thao tác</th>
         </tr>
-    }
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            bien++;
+            <tr>
+                <td>
+                    @bien
+                </td>
+                <td>
+                    <img src="@Url.Content(item.Image)" style="width: 70px" />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Categories.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Amount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CodeColor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status)
+                </td>
+                <td>
+                    <a class="fa fa-pencil" style="font-size:20px; padding-right: 10px" href="@Url.Action("Edit", "Product", new { id = item.Id })" aria-hidden="true"></a>
+                    <a class="fa fa-info" style="font-size:20px; padding-right: 10px" href="@Url.Action("Details", "Product", new { id = item.Id })" aria-hidden="true"></a>
+                    <a class="fa fa-trash" style="font-size:20px; padding-right: 10px" href="@Url.Action("Delete", "Product", new { id = item.Id})" aria-hidden="true"></a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
 
 </table>
+@Html.PagedListPager(Model, page => Url.Action("Index", new { page}))
+

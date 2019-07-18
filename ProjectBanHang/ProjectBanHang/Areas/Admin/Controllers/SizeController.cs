@@ -16,9 +16,9 @@ namespace ProjectBanHang.Areas.Admin.Controllers
             _size = new Repository<Size>();
         }
         // GET: Admin/Size
-        public ActionResult Index()
+        public ActionResult Index(int page, int pageSize)
         {
-            return View(_size.GetAll());
+            return View(_size.GetAllListPage(page, pageSize));
         }
 
         public ActionResult Create()

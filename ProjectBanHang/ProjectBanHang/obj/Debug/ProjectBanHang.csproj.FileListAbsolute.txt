@@ -326,3 +326,7 @@ E:\to-do-learn\dot.net MVC\Project\ProjectWeb\ProjectBanHang\ProjectBanHang\obj\
 E:\to-do-learn\dot.net MVC\Project\ProjectWeb\ProjectBanHang\ProjectBanHang\obj\Debug\ProjectBanHang.csproj.CopyComplete
 E:\to-do-learn\dot.net MVC\Project\ProjectWeb\ProjectBanHang\ProjectBanHang\obj\Debug\ProjectBanHang.dll
 E:\to-do-learn\dot.net MVC\Project\ProjectWeb\ProjectBanHang\ProjectBanHang\obj\Debug\ProjectBanHang.pdb
+E:\to-do-learn\dot.net MVC\Project\ProjectWeb\ProjectBanHang\ProjectBanHang\bin\PagedList.dll
+E:\to-do-learn\dot.net MVC\Project\ProjectWeb\ProjectBanHang\ProjectBanHang\bin\PagedList.Mvc.dll
+E:\to-do-learn\dot.net MVC\Project\ProjectWeb\ProjectBanHang\ProjectBanHang\bin\PagedList.xml
+E:\to-do-learn\dot.net MVC\Project\ProjectWeb\ProjectBanHang\ProjectBanHang\bin\PagedList.Mvc.xml

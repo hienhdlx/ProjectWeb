@@ -16,9 +16,9 @@ namespace ProjectBanHang.Areas.Admin.Controllers
             _color = new Repository<Color>();
         }
         // GET: Admin/Color
-        public ActionResult Index()
+        public ActionResult Index(int page, int pageSize)
         {
-            return View(_color.GetAll());
+            return View(_color.GetAllListPage(page, pageSize));
         }
 
         public ActionResult Create()
