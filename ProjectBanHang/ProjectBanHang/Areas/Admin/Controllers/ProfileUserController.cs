@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
 
 namespace ProjectBanHang.Areas.Admin.Controllers
 {
@@ -18,9 +19,15 @@ namespace ProjectBanHang.Areas.Admin.Controllers
         }
 
         // GET: Admin/ProfileUser
-        public ActionResult Index(int page, int pageSize)
+        public ActionResult Index(int ? page)
         {
-            return View(_user.GetAllListPage(page, pageSize));
+            int pageIndex = 1;
+            int pageSize = 4;
+            pageIndex = page.HasValue ? Convert.ToInt32(page) : 1;
+            var user = _user.GetAll();
+            IPagedList<ProfileUser> users = null;
+            users = user.ToPagedList(pageIndex, pageSize);
+            return View(users);
         }
 
         public ActionResult Create()

@@ -142,6 +142,7 @@
     <Compile Include="Areas\Admin\Controllers\ColorController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\NewsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProfileUserController.cs" />
     <Compile Include="Areas\Admin\Controllers\SizeController.cs" />
@@ -152,6 +153,7 @@
     <Compile Include="Areas\Admin\Models\DataModels\DataBanHangContext.cs" />
     <Compile Include="Areas\Admin\Models\DataModels\LoginModel.cs" />
     <Compile Include="Areas\Admin\Models\DataModels\Model.cs" />
+    <Compile Include="Areas\Admin\Models\DataModels\News.cs" />
     <Compile Include="Areas\Admin\Models\DataModels\Product.cs" />
     <Compile Include="Areas\Admin\Models\DataModels\ProfileUser.cs" />
     <Compile Include="Areas\Admin\Models\DataModels\Size.cs" />
@@ -1920,6 +1922,7 @@
     <Folder Include="Areas\Admin\AssetsAdmin\Uploads\" />
     <Folder Include="Areas\Admin\Shared\" />
     <Folder Include="Areas\Admin\Views\Base\" />
+    <Folder Include="Areas\Admin\Views\News\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>

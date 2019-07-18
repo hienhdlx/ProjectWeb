@@ -18,7 +18,7 @@ namespace ProjectBanHang.Areas.Admin.Controllers
         // GET: Admin/Color
         public ActionResult Index(int page, int pageSize)
         {
-            return View(_color.GetAllListPage(page, pageSize));
+            return View(_color.GetAll());
         }
 
         public ActionResult Create()

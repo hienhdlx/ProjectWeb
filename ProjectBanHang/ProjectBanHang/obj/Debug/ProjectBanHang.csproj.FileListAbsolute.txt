@@ -330,3 +330,7 @@ E:\to-do-learn\dot.net MVC\Project\ProjectWeb\ProjectBanHang\ProjectBanHang\bin\
 E:\to-do-learn\dot.net MVC\Project\ProjectWeb\ProjectBanHang\ProjectBanHang\bin\PagedList.Mvc.dll
 E:\to-do-learn\dot.net MVC\Project\ProjectWeb\ProjectBanHang\ProjectBanHang\bin\PagedList.xml
 E:\to-do-learn\dot.net MVC\Project\ProjectWeb\ProjectBanHang\ProjectBanHang\bin\PagedList.Mvc.xml
+G:\Net MVC\ProjectWeb\ProjectBanHang\ProjectBanHang\bin\PagedList.dll
+G:\Net MVC\ProjectWeb\ProjectBanHang\ProjectBanHang\bin\PagedList.Mvc.dll
+G:\Net MVC\ProjectWeb\ProjectBanHang\ProjectBanHang\bin\PagedList.xml
+G:\Net MVC\ProjectWeb\ProjectBanHang\ProjectBanHang\bin\PagedList.Mvc.xml

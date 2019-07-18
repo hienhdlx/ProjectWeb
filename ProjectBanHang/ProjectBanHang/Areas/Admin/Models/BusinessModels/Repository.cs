@@ -38,11 +38,7 @@ namespace ProjectBanHang.Areas.Admin.Models.BusinessModels
             return _tbl.Find(id);
         }
 
-        public IEnumerable<T> GetAllListPage(int page, int pageSize)
-        {
-            return _tbl.ToList().OrderByDescending(x => x).Skip(3).ToPagedList(page, pageSize);
-        }
-
+        
         public List<T> GetAll()
         {
             return _tbl.ToList();

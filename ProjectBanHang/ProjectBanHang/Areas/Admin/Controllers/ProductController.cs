@@ -20,11 +20,15 @@ namespace ProjectBanHang.Areas.Admin.Controllers
             _category = new Repository<Category>();
         }
         // GET: Admin/Product
-        public ActionResult Index(int page = 1, int pageSize = 1) 
+        public ActionResult Index(int ? page) 
         {
-
-            var pagemodel = _product.GetAllListPage(page, pageSize);
-            return View(_product._tbl.Include(x => x.Categories).ToList());
+            int pageIndex = 1;
+            int pageSize = 5;
+            pageIndex = page.HasValue ? Convert.ToInt32(page) : 1;
+            var prodt = _product._tbl.Include(x => x.Categories).ToList();
+            IPagedList<Product> pro = null;
+            pro = prodt.ToPagedList(pageIndex, pageSize);
+            return View(pro);
         }
 
         public ActionResult Details(int id)
