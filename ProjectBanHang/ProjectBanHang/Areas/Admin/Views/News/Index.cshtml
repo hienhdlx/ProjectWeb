@@ -1,0 +1,59 @@
+﻿@model PagedList.IPagedList<ProjectBanHang.Areas.Admin.Models.DataModels.News>
+@using PagedList.Mvc;
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>Index</h2>
+
+<button class="btn btn-success">
+    @Html.ActionLink("Thêm mới", "Create")
+</button>
+<table class="table table-bordered table-hover" style="background-color: #fff">
+    <thead>
+        <tr>
+            <th>Tiêu đề</th>
+            <th>Trạng thái</th>
+            <th>Ngày tạo</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+
+                <td>
+                    @if (item.Status == true)
+                    {
+                        @Html.Raw(true)
+                    }
+                    else
+                    {
+                        @Html.Raw(false)
+                    }
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreateDate)
+                </td>
+                <td>
+                    <a class="fa fa-pencil" style="font-size:20px; padding-right: 10px" href="@Url.Action("Edit", "News", new { id = item.Id })" aria-hidden="true"></a>
+                    <a class="fa fa-info" style="font-size:20px; padding-right: 10px" href="@Url.Action("Details", "News", new { id = item.Id })" aria-hidden="true"></a>
+                    <a class="fa fa-trash" style="font-size:20px; padding-right: 10px" href="@Url.Action("Delete", "News", new { id = item.Id})" aria-hidden="true"></a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>
+
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)
+of @Model.PageCount  @Html.PagedListPager(Model, page => Url.Action("Index", new { page}))

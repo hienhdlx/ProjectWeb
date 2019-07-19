@@ -22,5 +22,7 @@ namespace ProjectBanHang.Areas.Admin.Models.DataModels
         public System.Data.Entity.DbSet<ProjectBanHang.Areas.Admin.Models.DataModels.Category> Categories { get; set; }
 
         public System.Data.Entity.DbSet<ProjectBanHang.Areas.Admin.Models.DataModels.ProfileUser> ProfileUsers { get; set; }
+
+        public System.Data.Entity.DbSet<ProjectBanHang.Areas.Admin.Models.DataModels.News> News { get; set; }
     }
 }

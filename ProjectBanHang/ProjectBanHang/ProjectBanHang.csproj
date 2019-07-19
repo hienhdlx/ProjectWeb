@@ -1892,6 +1892,10 @@
     <Content Include="Areas\Admin\AssetsAdmin\stylelogin\vendor\bootstrap\css\bootstrap.css.map" />
     <Content Include="Areas\Admin\AssetsAdmin\stylelogin\vendor\bootstrap\css\bootstrap.min.css.map" />
     <Content Include="Areas\Admin\Views\ProfileUser\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\News\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\News\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\News\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\News\Edit.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -1922,7 +1926,6 @@
     <Folder Include="Areas\Admin\AssetsAdmin\Uploads\" />
     <Folder Include="Areas\Admin\Shared\" />
     <Folder Include="Areas\Admin\Views\Base\" />
-    <Folder Include="Areas\Admin\Views\News\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
