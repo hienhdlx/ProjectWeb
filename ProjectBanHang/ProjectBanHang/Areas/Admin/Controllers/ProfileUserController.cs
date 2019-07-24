@@ -10,7 +10,7 @@ using PagedList;
 
 namespace ProjectBanHang.Areas.Admin.Controllers
 {
-    public class ProfileUserController : Controller
+    public class ProfileUserController : BaseController
     {
         private Repository<ProfileUser> _user;
         public ProfileUserController()
@@ -19,7 +19,7 @@ namespace ProjectBanHang.Areas.Admin.Controllers
         }
 
         // GET: Admin/ProfileUser
-        public ActionResult Index(int ? page)
+        public ActionResult Index(string searchString, int? page)
         {
             int pageIndex = 1;
             int pageSize = 4;
@@ -84,6 +84,7 @@ namespace ProjectBanHang.Areas.Admin.Controllers
 
         public ActionResult Delete(int id)
         {
+
             _user.Remove(id);
             return RedirectToAction("Index");
         }

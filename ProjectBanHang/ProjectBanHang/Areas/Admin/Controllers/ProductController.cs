@@ -10,7 +10,7 @@ using PagedList;
 
 namespace ProjectBanHang.Areas.Admin.Controllers
 {
-    public class ProductController : Controller
+    public class ProductController : BaseController
     {
         private Repository<Product> _product;
         private Repository<Category> _category;
