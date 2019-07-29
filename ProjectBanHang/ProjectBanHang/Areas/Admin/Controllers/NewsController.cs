@@ -23,10 +23,10 @@ namespace ProjectBanHang.Areas.Admin.Controllers
             int pageIndex = 1;
             int pageSize = 4;
             pageIndex = page.HasValue ? Convert.ToInt32(page) : 1;
-            var news = _news.GetAll();
-            IPagedList<News> ne = null;
-            ne = news.ToPagedList(pageIndex, pageSize);
-            return View(ne);
+            //var news = _news.GetAll();
+            //IPagedList<News> ne = null;
+            //ne = news.ToPagedList(pageIndex, pageSize);
+            return View();
         }
 
         public ActionResult Details(int id)

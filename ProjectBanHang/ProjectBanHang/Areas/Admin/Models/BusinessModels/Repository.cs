@@ -43,7 +43,7 @@ namespace ProjectBanHang.Areas.Admin.Models.BusinessModels
         {
             return _tbl.ToList();
         }
-
+       
         public void Remove(object id)
         {
             _tbl.Remove(Get(id)); 

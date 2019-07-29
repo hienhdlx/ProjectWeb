@@ -10,7 +10,7 @@ using PagedList;
 
 namespace ProjectBanHang.Areas.Admin.Controllers
 {
-    public class ProfileUserController : BaseController
+    public class ProfileUserController : Controller
     {
         private Repository<ProfileUser> _user;
         public ProfileUserController()
@@ -21,13 +21,42 @@ namespace ProjectBanHang.Areas.Admin.Controllers
         // GET: Admin/ProfileUser
         public ActionResult Index(string searchString, int? page)
         {
+            //with no text search
+
+            //int pageIndex = 1;
+            //int pageSize = 4;
+            //pageIndex = page.HasValue ? Convert.ToInt32(page) : 1;
+            //var user = _user.GetAll();
+            //IPagedList<ProfileUser> users = null;
+            //users = user.ToPagedList(pageIndex, pageSize);
+            //return View(users);
+
+
+            //have text search and pagelist
+
+            IPagedList<ProfileUser> users;
             int pageIndex = 1;
             int pageSize = 4;
             pageIndex = page.HasValue ? Convert.ToInt32(page) : 1;
-            var user = _user.GetAll();
-            IPagedList<ProfileUser> users = null;
-            users = user.ToPagedList(pageIndex, pageSize);
+
+            using (var db = new DataBanHangContext())
+            {
+                if (!string.IsNullOrWhiteSpace(searchString))
+                    users = db.ProfileUsers.Where(w => w.UserName.Contains(searchString) || w.Name.Contains(searchString)).OrderByDescending(o => o.CreateDate).ToPagedList(pageIndex, pageSize);
+                else
+                    users = db.ProfileUsers.OrderByDescending(o => o.CreateDate).ToPagedList(pageIndex, pageSize);
+            }
+
             return View(users);
+            //var listuse = _user.GetAll();
+
+            //if (!string.IsNullOrEmpty(searchString))
+            //{
+            //    IPagedList<ProfileUser> users = null;
+            //    listuse = listuse.Where(x => x.UserName.Contains(searchString)).ToList();
+            //    users = listuse.ToPagedList(pageIndex, pageSize);
+            //    return View(users);
+            //}
         }
 
         public ActionResult Create()
