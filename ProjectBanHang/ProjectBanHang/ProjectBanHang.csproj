@@ -152,6 +152,8 @@
     <Compile Include="Areas\Admin\Models\DataModels\Color.cs" />
     <Compile Include="Areas\Admin\Models\DataModels\DataBanHangContext.cs" />
     <Compile Include="Areas\Admin\Models\DataModels\LoginModel.cs" />
+    <Compile Include="Areas\Admin\Models\DataModels\Menu.cs" />
+    <Compile Include="Areas\Admin\Models\DataModels\MenuType.cs" />
     <Compile Include="Areas\Admin\Models\DataModels\Model.cs" />
     <Compile Include="Areas\Admin\Models\DataModels\News.cs" />
     <Compile Include="Areas\Admin\Models\DataModels\Product.cs" />

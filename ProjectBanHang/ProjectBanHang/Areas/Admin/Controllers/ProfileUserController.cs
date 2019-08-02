@@ -10,7 +10,7 @@ using PagedList;
 
 namespace ProjectBanHang.Areas.Admin.Controllers
 {
-    public class ProfileUserController : Controller
+    public class ProfileUserController : BaseController
     {
         private Repository<ProfileUser> _user;
         public ProfileUserController()
@@ -42,21 +42,16 @@ namespace ProjectBanHang.Areas.Admin.Controllers
             using (var db = new DataBanHangContext())
             {
                 if (!string.IsNullOrWhiteSpace(searchString))
+                {
                     users = db.ProfileUsers.Where(w => w.UserName.Contains(searchString) || w.Name.Contains(searchString)).OrderByDescending(o => o.CreateDate).ToPagedList(pageIndex, pageSize);
+                    ViewBag.SearchString = searchString;
+
+                }
                 else
                     users = db.ProfileUsers.OrderByDescending(o => o.CreateDate).ToPagedList(pageIndex, pageSize);
             }
 
             return View(users);
-            //var listuse = _user.GetAll();
-
-            //if (!string.IsNullOrEmpty(searchString))
-            //{
-            //    IPagedList<ProfileUser> users = null;
-            //    listuse = listuse.Where(x => x.UserName.Contains(searchString)).ToList();
-            //    users = listuse.ToPagedList(pageIndex, pageSize);
-            //    return View(users);
-            //}
         }
 
         public ActionResult Create()
@@ -106,6 +101,7 @@ namespace ProjectBanHang.Areas.Admin.Controllers
                 var encryptedMD5 = Encryptor.MD5Hash(user.Password);
                 user.Password = encryptedMD5;
                 _user.Add(user);
+                SetAlert("Thêm hồ sơ User thành công", "success");
                 return RedirectToAction("Index");
             }
             return View();
@@ -115,6 +111,7 @@ namespace ProjectBanHang.Areas.Admin.Controllers
         {
 
             _user.Remove(id);
+            SetAlert("Xóa hồ sơ User thành công", "success");
             return RedirectToAction("Index");
         }
 

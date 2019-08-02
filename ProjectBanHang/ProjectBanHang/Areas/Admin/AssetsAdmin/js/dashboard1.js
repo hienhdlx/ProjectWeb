@@ -40,6 +40,9 @@
          time: 1200
      });
 
+     $("#Alert_Box").removeClass('hide');
+     $("#Alert_Box").delay(1000).slideUp(800);
+
      var sparklineLogin = function () {
          $('#sparklinedash').sparkline([0, 5, 6, 10, 9, 12, 4, 9], {
              type: 'bar',
