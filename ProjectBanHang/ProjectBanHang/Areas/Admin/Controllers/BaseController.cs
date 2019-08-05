@@ -12,7 +12,7 @@ namespace ProjectBanHang.Areas.Admin.Controllers
     {
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            var session = Session[CommonConstants.USER_SESSION];
+            var session = (UserLogin)Session[CommonConstants.USER_SESSION];
             if (session == null)
             {
                 filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary(new { Controller = "Login", Action = "Index", Areas = "Admin" }));
@@ -29,7 +29,11 @@ namespace ProjectBanHang.Areas.Admin.Controllers
             }
             else if (type == "warning")
             {
-
+                TempData["AlertType"] = "alert-warning";
+            }
+            else if (type == "error")
+            {
+                TempData["AlertType"] = "alert-danger";
             }
         }
     }

@@ -38,7 +38,7 @@ namespace ProjectBanHang.Areas.Admin.Controllers
 
         public ActionResult Create()
         {
-            //ViewBag.CategoryId = new SelectList(_category.GetAll(), "Id", "Name");
+            ViewBag.CategoryId = new SelectList(_category.GetAll(), "Id", "Name");
             return View();
         }
 
@@ -47,7 +47,7 @@ namespace ProjectBanHang.Areas.Admin.Controllers
         [ValidateInput(false)]
         public ActionResult Create(Product pro)
         {
-            //ViewBag.CategoryId = new SelectList(_category.GetAll(), "Id", "Name");
+            ViewBag.CategoryId = new SelectList(_category.GetAll(), "Id", "Name");
 
             if (ModelState.IsValid)
             {
@@ -59,7 +59,7 @@ namespace ProjectBanHang.Areas.Admin.Controllers
 
         public ActionResult Edit(int id)
         {
-            //ViewBag.CategoryId = new SelectList(_category.GetAll(), "Id", "Name", _product.Get(id).CategoryId);
+            ViewBag.CategoryId = new SelectList(_category.GetAll(), "Id", "Name", _product.Get(id).CategoryId);
             return View(_product.Get(id));
         }
 
@@ -68,7 +68,7 @@ namespace ProjectBanHang.Areas.Admin.Controllers
         [ValidateInput(false)]
         public ActionResult Edit(Product p)
         {
-           // ViewBag.CategoryId = new SelectList(_category.GetAll(), "Id", "Name", _product.Get(p.CategoryId));
+            ViewBag.CategoryId = new SelectList(_category.GetAll(), "Id", "Name", _product.Get(p.CategoryId));
             if (ModelState.IsValid)
             {
                 Repository<Product> _product2 = new Repository<Product>();

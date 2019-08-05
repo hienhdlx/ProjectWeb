@@ -8,6 +8,12 @@
      var body = $("body");
 
      $(function () {
+         $("#Alert_Box").removeClass('hide');
+         $("#Alert_Box").delay(1000).slideUp(500);
+
+     })
+
+     $(function () {
          $(".preloader").fadeOut();
          $('#side-menu').metisMenu();
      });
@@ -67,6 +73,7 @@
          $(window).bind("resize", set);
      });
 
+     
 
      /* ===== Tooltip Initialization ===== */
 

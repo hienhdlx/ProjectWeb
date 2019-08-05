@@ -142,6 +142,8 @@
     <Compile Include="Areas\Admin\Controllers\ColorController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MenuController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MenuTypeController.cs" />
     <Compile Include="Areas\Admin\Controllers\NewsController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProfileUserController.cs" />
@@ -152,6 +154,8 @@
     <Compile Include="Areas\Admin\Models\DataModels\Color.cs" />
     <Compile Include="Areas\Admin\Models\DataModels\DataBanHangContext.cs" />
     <Compile Include="Areas\Admin\Models\DataModels\LoginModel.cs" />
+    <Compile Include="Areas\Admin\Models\DataModels\Menu.cs" />
+    <Compile Include="Areas\Admin\Models\DataModels\MenuType.cs" />
     <Compile Include="Areas\Admin\Models\DataModels\Model.cs" />
     <Compile Include="Areas\Admin\Models\DataModels\News.cs" />
     <Compile Include="Areas\Admin\Models\DataModels\Product.cs" />
@@ -1896,6 +1900,14 @@
     <Content Include="Areas\Admin\Views\News\Details.cshtml" />
     <Content Include="Areas\Admin\Views\News\Create.cshtml" />
     <Content Include="Areas\Admin\Views\News\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\MenuType\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\MenuType\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\MenuType\Detail.cshtml" />
+    <Content Include="Areas\Admin\Views\MenuType\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Menu\Create.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
