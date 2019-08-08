@@ -12,7 +12,7 @@ namespace ProjectBanHang.Areas.Admin.Models.DataModels
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
+        public int MenuTypeId { get; set; }
         [DisplayName("Menu Type")]
         [Required]
         public string Name { get; set; }
