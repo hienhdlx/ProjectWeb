@@ -7,52 +7,64 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Text)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Link)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.DisplayOrder)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Tardet)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Status)
-        </th>
-        <th></th>
-    </tr>
+<button class="btn btn-success">
+    @Html.ActionLink("Thêm mới", "Create")
+</button>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Text)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Link)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DisplayOrder)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tardet)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Text)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Link)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DisplayOrder)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tardet)
+                </td>
+                <td>
+                    @if (item.Status)
+                    {
+                        @Html.Raw("True");
+                    }
+                    else
+                    {
+                        @Html.Raw("false");
+                    }
+                </td>
+                <td>
+                    <a class="fa fa-pencil" style="font-size:20px; padding-right: 10px" href="@Url.Action("Edit", "Menu", new { id = item.Id })" aria-hidden="true"></a>
+                    <a class="fa fa-info" style="font-size:20px; padding-right: 10px" href="@Url.Action("Details", "Menu", new { id = item.Id })" aria-hidden="true"></a>
+                    <a class="fa fa-trash" style="font-size:20px; padding-right: 10px" href="@Url.Action("Delete", "Menu", new { id = item.Id})" aria-hidden="true"></a>
+                </td>
+            </tr>
+        }
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Text)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Link)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.DisplayOrder)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Tardet)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Status)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+    </tbody>
 
 </table>

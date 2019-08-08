@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectBanHang.Areas.Admin.Models.DataModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -25,6 +26,16 @@ namespace ProjectBanHang.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        [ChildActionOnly]
+        public ActionResult MainMenu()
+        {
+            using (var db = new DataBanHangContext())
+            {
+
+            }
+                return PartialView();
         }
     }
 }

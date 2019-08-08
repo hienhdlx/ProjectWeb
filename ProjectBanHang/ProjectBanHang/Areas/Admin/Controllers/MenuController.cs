@@ -20,6 +20,7 @@ namespace ProjectBanHang.Areas.Admin.Controllers
         // GET: Admin/Menu
         public ActionResult Index()
         {
+            //ViewBag.TypeId = new SelectList(_typemenu.GetAll(), "MenuTypeId", "Name");
             return View(_menu.GetAll());
         }
 
@@ -30,7 +31,7 @@ namespace ProjectBanHang.Areas.Admin.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.TypeId = new SelectList(_typemenu.GetAll(), "Id", "Name");
+            ViewBag.TypeId = new SelectList(_typemenu.GetAll(), "MenuTypeId", "Name");
             return View();
         }
 
@@ -49,16 +50,20 @@ namespace ProjectBanHang.Areas.Admin.Controllers
 
         public ActionResult Delete(int id)
         {
-            _menu.Remove(_menu.Get(id));
+            _menu.Remove(id);
             SetAlert("Xóa menu thành công", "success");
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
         public ActionResult Edit(int id)
         {
+            ViewBag.TypeId = new SelectList(_typemenu.GetAll(), "MenuTypeId", "Name", _menu.Get(id).MenuTypeId);
             return View(_menu.Get(id));
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Edit(Menu me)
         {
             if (ModelState.IsValid)
