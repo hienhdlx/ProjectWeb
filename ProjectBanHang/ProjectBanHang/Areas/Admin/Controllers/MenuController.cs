@@ -24,21 +24,24 @@ namespace ProjectBanHang.Areas.Admin.Controllers
             return View(_menu.GetAll());
         }
 
-        public ActionResult Detail(int id)
+        public ActionResult Details(int id)
         {
             return View(_menu.Get(id));
         }
 
         public ActionResult Create()
         {
-            ViewBag.TypeId = new SelectList(_typemenu.GetAll(), "MenuTypeId", "Name");
+            ViewBag.MenuTypeId = new SelectList(_typemenu.GetAll(), "MenuTypeId", "Name");
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
         public ActionResult Create(Menu me)
         {
+            //ViewBag.MenuTypeId = new SelectList(_typemenu.GetAll(), "MenuTypeId", "Name");
+
             if (ModelState.IsValid)
             {
                 _menu.Add(me);

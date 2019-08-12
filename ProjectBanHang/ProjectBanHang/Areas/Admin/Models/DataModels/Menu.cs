@@ -21,6 +21,9 @@ namespace ProjectBanHang.Areas.Admin.Models.DataModels
         public int DisplayOrder { get; set; }
         public string Tardet { get; set; }
         public bool Status { get; set; }
-        public virtual MenuType MenuTypeId { get; set; }
+        public int? MenuTypeId { get; set; }
+
+        [ForeignKey("MenuTypeId")]
+        public virtual MenuType MenuType { get; set; }
     }
 }
