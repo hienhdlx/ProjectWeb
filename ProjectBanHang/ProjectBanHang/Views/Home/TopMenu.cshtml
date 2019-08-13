@@ -1,0 +1,10 @@
+﻿@model List<ProjectBanHang.Areas.Admin.Models.DataModels.Menu>
+
+    <div class="user-menu">
+        <ul>
+            @foreach (var item in Model)
+            {
+                <li><a href="@item.Link"><i class="@item.Icon"></i> @item.Text</a></li>
+            }
+        </ul>
+    </div>

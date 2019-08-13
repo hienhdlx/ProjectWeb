@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace ProjectBanHang.Areas.Admin.Controllers
 {
@@ -27,19 +28,17 @@ namespace ProjectBanHang.Areas.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                var result = _login.Login(login.UserName, Encryptor.MD5Hash(login.Password));
-                if (result == 1)
+                //var result = _login.Login(login.UserName, Encryptor.MD5Hash(login.Password));
+
+                if (Membership.ValidateUser(login.UserName, login.Password))
                 {
-                    var user = _login.GetByName(login.UserName);
-                    var userSession = new UserLogin(); 
-                    userSession.UserId = user.Id;
-                    userSession.UserName = user.UserName;
-                    Session.Add(CommonConstants.USER_SESSION, userSession);  
+                    //var user = _login.GetByName(login.UserName);
+                    //var userSession = new UserLogin(); 
+                    //userSession.UserId = user.Id;
+                    //userSession.UserName = user.UserName;
+                    //Session.Add(CommonConstants.USER_SESSION, userSession);  
+                    FormsAuthentication.SetAuthCookie(login.UserName, login.RememberMe);
                     return RedirectToAction("Index", "Home");
-                }
-                else if (result == 2)
-                {
-                    ModelState.AddModelError("", "Mật khẩu không đúng");
                 }
                 else
                 {

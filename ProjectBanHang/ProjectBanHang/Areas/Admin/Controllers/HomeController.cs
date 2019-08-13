@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace ProjectBanHang.Areas.Admin.Controllers
 {
+    [Authorize]
     public class HomeController : BaseController
     {
         // GET: Admin/Home
@@ -13,5 +14,6 @@ namespace ProjectBanHang.Areas.Admin.Controllers
         {
             return View();
         }
+
     }
 }

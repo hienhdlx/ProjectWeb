@@ -10,15 +10,15 @@ namespace ProjectBanHang.Areas.Admin.Controllers
 {
     public class BaseController : Controller
     {
-        protected override void OnActionExecuting(ActionExecutingContext filterContext)
-        {
-            var session = (UserLogin)Session[CommonConstants.USER_SESSION];
-            if (session == null)
-            {
-                filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary(new { Controller = "Login", Action = "Index", Areas = "Admin" }));
-            }
-            base.OnActionExecuting(filterContext);
-        }
+        //protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        //{
+        //    var session = (UserLogin)Session[CommonConstants.USER_SESSION];
+        //    if (session == null)
+        //    {
+        //        filterContext.Result = new RedirectToRouteResult(new RouteValueDictionary(new { Controller = "Login", Action = "Index", Areas = "Admin" }));
+        //    }
+        //    base.OnActionExecuting(filterContext);
+        //}
 
         protected void SetAlert(string message, string type)
         {

@@ -33,9 +33,19 @@ namespace ProjectBanHang.Controllers
         {
             using (var db = new DataBanHangContext())
             {
-
+                var listMenu = db.Menus.Where(x => x.MenuTypeId == 1).ToList();
+                return PartialView(listMenu);
             }
-                return PartialView();
+        }
+
+        [ChildActionOnly]
+        public ActionResult TopMenu()
+        {
+            using (var db = new DataBanHangContext())
+            {
+                var listtopMenu = db.Menus.Where(x => x.MenuTypeId == 2).ToList();
+                return PartialView(listtopMenu);
+            }
         }
     }
 }

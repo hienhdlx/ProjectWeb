@@ -137,9 +137,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Code\CustomMembershipProvider.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\ColorController.cs" />
+    <Compile Include="Areas\Admin\Controllers\FooterController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\MenuController.cs" />
@@ -153,6 +155,7 @@
     <Compile Include="Areas\Admin\Models\DataModels\Category.cs" />
     <Compile Include="Areas\Admin\Models\DataModels\Color.cs" />
     <Compile Include="Areas\Admin\Models\DataModels\DataBanHangContext.cs" />
+    <Compile Include="Areas\Admin\Models\DataModels\Footer.cs" />
     <Compile Include="Areas\Admin\Models\DataModels\LoginModel.cs" />
     <Compile Include="Areas\Admin\Models\DataModels\Menu.cs" />
     <Compile Include="Areas\Admin\Models\DataModels\MenuType.cs" />
@@ -1908,6 +1911,7 @@
     <Content Include="Areas\Admin\Views\MenuType\Edit.cshtml" />
     <Content Include="Areas\Admin\Views\Menu\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Menu\Details.cshtml" />
+    <Content Include="Areas\Admin\Views\Footer\Index.cshtml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -1932,6 +1936,8 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Admin\Views\Shared\_LayoutAdmin.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\MainMenu.cshtml" />
+    <Content Include="Views\Home\TopMenu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

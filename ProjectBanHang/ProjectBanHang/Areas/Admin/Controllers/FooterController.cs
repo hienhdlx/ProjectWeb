@@ -8,43 +8,38 @@ using System.Web.Mvc;
 
 namespace ProjectBanHang.Areas.Admin.Controllers
 {
-    public class MenuController : BaseController
+    public class FooterController : BaseController
     {
-        private Repository<Menu> _menu;
-        private Repository<MenuType> _typemenu;
-        public MenuController()
+        private Repository<Footer> _footer;
+        public FooterController()
         {
-            _menu = new Repository<Menu>();
-            _typemenu = new Repository<MenuType>();
+            _footer = new Repository<Footer>();
         }
         // GET: Admin/Menu
         public ActionResult Index()
         {
-            //ViewBag.TypeId = new SelectList(_typemenu.GetAll(), "MenuTypeId", "Name");
-            return View(_menu.GetAll());
+            return View(_footer.GetAll());
         }
 
         public ActionResult Details(int id)
         {
-            return View(_menu.Get(id));
+            return View(_footer.Get(id));
         }
 
         public ActionResult Create()
         {
-            ViewBag.MenuTypeId = new SelectList(_typemenu.GetAll(), "MenuTypeId", "Name");
             return View();
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
-        public ActionResult Create(Menu me)
+        public ActionResult Create(Footer f)
         {
-            //ViewBag.MenuTypeId = new SelectList(_typemenu.GetAll(), "MenuTypeId", "Name");
 
             if (ModelState.IsValid)
             {
-                _menu.Add(me);
+                _footer.Add(f);
                 SetAlert("Thêm menu thành công", "success");
                 return RedirectToAction("Index");
             }
@@ -53,25 +48,24 @@ namespace ProjectBanHang.Areas.Admin.Controllers
 
         public ActionResult Delete(int id)
         {
-            _menu.Remove(id);
+            _footer.Remove(id);
             SetAlert("Xóa menu thành công", "success");
             return RedirectToAction("Index");
         }
 
         public ActionResult Edit(int id)
         {
-            ViewBag.MenuTypeId = new SelectList(_typemenu.GetAll(), "MenuTypeId", "Name", _menu.Get(id).MenuTypeId);
-            return View(_menu.Get(id));
+            return View(_footer.Get(id));
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
-        public ActionResult Edit(Menu me)
+        public ActionResult Edit(Footer f)
         {
             if (ModelState.IsValid)
             {
-                _menu.Edit(me);
+                _footer.Edit(f);
                 SetAlert("Sửa thông tin thành công", "success");
                 return RedirectToAction("Index");
             }

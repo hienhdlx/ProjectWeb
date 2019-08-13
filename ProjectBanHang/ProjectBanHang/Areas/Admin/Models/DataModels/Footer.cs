@@ -8,24 +8,16 @@ using System.Web;
 
 namespace ProjectBanHang.Areas.Admin.Models.DataModels
 {
-    public class Menu
+    public class Footer
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        [Required]
-        [DisplayName("Tiêu đề")]
-        public string Text { get; set; }
-        public string Link { get; set; }
+        [DisplayName("Nội dung")]
+        public string Content { get; set; }
         [DisplayName("Thứ tự")]
-        public int DisplayOrder { get; set; }
-        public string Tardet { get; set; }
-        [DisplayName("Icon")]
-        public string Icon { get; set; }
+        public int DisplayOder { get; set; }
+        public string Link { get; set; }
         public bool Status { get; set; }
-        public int? MenuTypeId { get; set; }
-
-        [ForeignKey("MenuTypeId")]
-        public virtual MenuType MenuType { get; set; }
     }
 }

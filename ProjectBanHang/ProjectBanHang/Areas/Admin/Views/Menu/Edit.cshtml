@@ -51,9 +51,17 @@
     </div>
 
     <div class="form-group">
+        @Html.LabelFor(model => model.Icon, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Icon, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Icon, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
         @Html.LabelFor(model => model.MenuTypeId, htmlAttributes: new { @class = "control-lable col-md-2" })
         <div class="col-md-10">
-            @Html.DropDownList("TypeId", null, htmlAttributes: new { @class = "form-control" })
+            @Html.DropDownList("MenuTypeId", null, htmlAttributes: new { @class = "form-control" })
             @Html.ValidationMessageFor(model => model.MenuTypeId, "", new { @class = "text-danger" })
         </div>
     </div>

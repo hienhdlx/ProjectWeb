@@ -1,0 +1,32 @@
+﻿@model List<ProjectBanHang.Areas.Admin.Models.DataModels.Menu>
+
+<div class="mainmenu-area">
+    <div class="container">
+        <div class="row">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    @foreach (var item in Model)
+                    {
+                        if (item.DisplayOrder == 1)
+                        {
+                            <li class="active"><a href="@item.Link">@item.Text</a></li>
+                        }
+                        else
+                        {
+                            <li><a href="@item.Link">@item.Text</a></li>
+                        }
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
