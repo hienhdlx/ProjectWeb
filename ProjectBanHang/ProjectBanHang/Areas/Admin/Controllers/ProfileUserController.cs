@@ -10,6 +10,7 @@ using PagedList;
 
 namespace ProjectBanHang.Areas.Admin.Controllers
 {
+    [Authorize]
     public class ProfileUserController : BaseController
     {
         private Repository<ProfileUser> _user;

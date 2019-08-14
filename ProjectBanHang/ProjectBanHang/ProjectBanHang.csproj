@@ -138,6 +138,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Code\CustomMembershipProvider.cs" />
+    <Compile Include="Areas\Admin\Code\SessionHelper.cs" />
+    <Compile Include="Areas\Admin\Code\UserSession.cs" />
     <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
     <Compile Include="Areas\Admin\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\ColorController.cs" />
@@ -152,6 +154,7 @@
     <Compile Include="Areas\Admin\Controllers\SizeController.cs" />
     <Compile Include="Areas\Admin\Models\BusinessModels\IRepository.cs" />
     <Compile Include="Areas\Admin\Models\BusinessModels\Repository.cs" />
+    <Compile Include="Areas\Admin\Models\DataModels\AccountModel.cs" />
     <Compile Include="Areas\Admin\Models\DataModels\Category.cs" />
     <Compile Include="Areas\Admin\Models\DataModels\Color.cs" />
     <Compile Include="Areas\Admin\Models\DataModels\DataBanHangContext.cs" />

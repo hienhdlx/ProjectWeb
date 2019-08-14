@@ -7,7 +7,7 @@ using System.Web.Mvc;
 namespace ProjectBanHang.Areas.Admin.Controllers
 {
     [Authorize]
-    public class HomeController : BaseController
+    public class HomeController : Controller
     {
         // GET: Admin/Home
         public ActionResult Index() 

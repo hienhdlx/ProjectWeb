@@ -39,25 +39,26 @@
                         Sign In
                     </span>
                 </div>
-                @using (Html.BeginForm("Login", "Login", FormMethod.Post, new { @class = "login100-form validate-form" }))
+                @using (Html.BeginForm())
                 {
 
-                    @Html.ValidationSummary(false)
+                    @Html.ValidationSummary(true, null, new { @class = "alert alert-danger"})
+                    @Html.AntiForgeryToken()
                     <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
                         <span class="label-input100">Username</span>
-                        @Html.TextBoxFor(model => model.UserName, new { @class = "input100", @autocomplete = "off", @placeholder = "Nhập UserName"})
+                        @Html.TextBoxFor(model => model.UserName, new { @class = "input100", @autocomplete = "off", @placeholder = "Nhập UserName" })
                         <span class="focus-input100"></span>
                     </div>
 
                     <div class="wrap-input100 validate-input m-b-18" data-validate="Password is required">
                         <span class="label-input100">Password</span>
-                        @Html.TextBoxFor(model => model.Password, new { @class = "input100", @name = "pass", @autocomplete = "off", @placeholder = "Nhập Password", Type = "password"})
+                        @Html.TextBoxFor(model => model.Password, new { @class = "input100", @name = "pass", @autocomplete = "off", @placeholder = "Nhập Password", Type = "password" })
                         <span class="focus-input100"></span>
                     </div>
 
                     <div class="flex-sb-m w-full p-b-30">
                         <div class="contact100-form-checkbox">
-                            
+
                             @Html.CheckBoxFor(model => model.RememberMe, htmlAttributes: new { Type = "checkbox", })
                             <label for="RememberMe" style="font-family: Poppins-Regular; font-size: 15px; color: #808080; line-height: 1.2; text-align: right; top:14px; left: -105px; display: inline">Remember me</label>
                         </div>

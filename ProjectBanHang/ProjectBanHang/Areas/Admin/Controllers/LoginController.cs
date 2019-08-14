@@ -1,4 +1,5 @@
-﻿using ProjectBanHang.Areas.Admin.Models.BusinessModels;
+﻿using ProjectBanHang.Areas.Admin.Code;
+using ProjectBanHang.Areas.Admin.Models.BusinessModels;
 using ProjectBanHang.Areas.Admin.Models.DataModels;
 using ProjectBanHang.Common;
 using System;
@@ -18,34 +19,35 @@ namespace ProjectBanHang.Areas.Admin.Controllers
             _login = new Repository<LoginModel>();
         }
 
+        [HttpGet]
         // GET: Admin/Login
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult Login(LoginModel login)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Index(LoginModel login)
         {
-            if (ModelState.IsValid)
-            {
-                //var result = _login.Login(login.UserName, Encryptor.MD5Hash(login.Password));
 
-                if (Membership.ValidateUser(login.UserName, login.Password))
-                {
-                    //var user = _login.GetByName(login.UserName);
-                    //var userSession = new UserLogin(); 
-                    //userSession.UserId = user.Id;
-                    //userSession.UserName = user.UserName;
-                    //Session.Add(CommonConstants.USER_SESSION, userSession);  
-                    FormsAuthentication.SetAuthCookie(login.UserName, login.RememberMe);
-                    return RedirectToAction("Index", "Home");
-                }
-                else
-                {
-                    ModelState.AddModelError("", "Tài khoản hoặc mật khẩu không đúng");
-                }
+            if (Membership.ValidateUser(login.UserName, login.Password) && ModelState.IsValid)
+            {
+                FormsAuthentication.SetAuthCookie(login.UserName, login.RememberMe);
+                return RedirectToAction("Index","Home");
             }
-            return RedirectToAction("Index");
+            else
+            {
+                ModelState.AddModelError("", "Tên tài khoản hoặc mật khẩu không đúng");
+            }
+            return View(login);
+            
+        }
+
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Login");
         }
     }
 }

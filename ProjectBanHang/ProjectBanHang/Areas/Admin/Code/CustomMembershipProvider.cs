@@ -11,7 +11,7 @@ namespace ProjectBanHang.Areas.Admin.Code
 
     public class CustomMembershipProvider : MembershipProvider
     {
-        private Repository<LoginModel> _login;
+        
         public override bool EnablePasswordRetrieval => throw new NotImplementedException();
 
         public override bool EnablePasswordReset => throw new NotImplementedException();
@@ -111,15 +111,8 @@ namespace ProjectBanHang.Areas.Admin.Code
 
         public override bool ValidateUser(string username, string password)
         {
-            var result = _login.Login(username, password);
-            if(result == 1)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            var result = new AccountModel().Login(username, password);
+            return result;
         }
     }
 }
