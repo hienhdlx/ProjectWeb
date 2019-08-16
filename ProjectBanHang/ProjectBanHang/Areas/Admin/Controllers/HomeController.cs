@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProjectBanHang.Areas.Admin.Models.BusinessModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,6 +13,7 @@ namespace ProjectBanHang.Areas.Admin.Controllers
         // GET: Admin/Home
         public ActionResult Index() 
         {
+            
             return View();
         }
 

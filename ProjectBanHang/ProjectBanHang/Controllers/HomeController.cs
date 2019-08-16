@@ -1,4 +1,5 @@
-﻿using ProjectBanHang.Areas.Admin.Models.DataModels;
+﻿using ProjectBanHang.Areas.Admin.Models.BusinessModels;
+using ProjectBanHang.Areas.Admin.Models.DataModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,8 @@ namespace ProjectBanHang.Controllers
     {
         public ActionResult Index()
         {
+            var productDao = new ProductDAO();
+            ViewBag.listproducts = productDao.listProducts(5);
             return View();
         }
 

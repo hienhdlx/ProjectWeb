@@ -153,6 +153,7 @@
     <Compile Include="Areas\Admin\Controllers\ProfileUserController.cs" />
     <Compile Include="Areas\Admin\Controllers\SizeController.cs" />
     <Compile Include="Areas\Admin\Models\BusinessModels\IRepository.cs" />
+    <Compile Include="Areas\Admin\Models\BusinessModels\ProductDAO.cs" />
     <Compile Include="Areas\Admin\Models\BusinessModels\Repository.cs" />
     <Compile Include="Areas\Admin\Models\DataModels\AccountModel.cs" />
     <Compile Include="Areas\Admin\Models\DataModels\Category.cs" />
