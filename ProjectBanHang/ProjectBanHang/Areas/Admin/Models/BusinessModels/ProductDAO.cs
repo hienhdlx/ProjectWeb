@@ -18,5 +18,16 @@ namespace ProjectBanHang.Areas.Admin.Models.BusinessModels
         {
             return db.Products.OrderByDescending(x => x.Price).Take(top).ToList();
         }
+
+        public Product ViewDetail(int id)
+        {
+            return db.Products.Find(id);
+        }
+
+        public List<Product> listRelateProduct(int productId, int top)
+        {
+            var product = db.Products.Find(productId);
+            return db.Products.Where(x => x.Id != productId).Take(top).ToList();
+        }
     }
 }

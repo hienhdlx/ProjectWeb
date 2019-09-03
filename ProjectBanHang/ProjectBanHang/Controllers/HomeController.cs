@@ -13,7 +13,9 @@ namespace ProjectBanHang.Controllers
         public ActionResult Index()
         {
             var productDao = new ProductDAO();
-            ViewBag.listproducts = productDao.listProducts(5);
+            ViewBag.listproducts = productDao.listProducts(6);
+
+            ViewBag.Slides = new SlideDao().ListAll();
             return View();
         }
 

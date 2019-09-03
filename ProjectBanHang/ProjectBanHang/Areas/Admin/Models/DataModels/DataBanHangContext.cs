@@ -28,5 +28,7 @@ namespace ProjectBanHang.Areas.Admin.Models.DataModels
         public System.Data.Entity.DbSet<ProjectBanHang.Areas.Admin.Models.DataModels.Menu> Menus { get; set; }
 
         public System.Data.Entity.DbSet<ProjectBanHang.Areas.Admin.Models.DataModels.Footer> Footers { get; set; }
+
+        public System.Data.Entity.DbSet<ProjectBanHang.Areas.Admin.Models.DataModels.Slide> Slides { get; set; }
     }
 }

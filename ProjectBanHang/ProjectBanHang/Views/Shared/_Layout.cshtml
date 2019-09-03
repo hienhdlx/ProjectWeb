@@ -1,212 +1,203 @@
-﻿<!DOCTYPE html>
-
+﻿
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>N-Air</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ustora Demo</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="N-Air Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() {setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <meta charset utf="8">
+    <!--fonts-->
+    <link href='//fonts.googleapis.com/css?family=Fredoka+One' rel='stylesheet' type='text/css'>
 
-    <!-- Google Fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet'
-          type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="~/Content/Assets/css/bootstrap.min.css">
-
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="~/Content/Assets/css/font-awesome.min.css">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="~/Content/Assets/css/owl.carousel.css">
-    <link rel="stylesheet" href="~/Content/Assets/style.css">
-    <link rel="stylesheet" href="~/Content/Assets/css/responsive.css">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <!--fonts-->
+    <!--bootstrap-->
+    <link href="~/Content/Assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <!--coustom css-->
+    <link href="~/Content/Assets/css/style.css" rel="stylesheet" type="text/css" />
+    <!--shop-kart-js-->
+    <script src="~/Content/Assets/js/simpleCart.min.js"></script>
+    <!--default-js-->
+    <script src="~/Content/Assets/js/jquery-2.1.4.min.js"></script>
+    <!--bootstrap-js-->
+    <script src="~/Content/Assets/js/bootstrap.min.js"></script>
+    <!--script-->
 </head>
-
 <body>
-
-    <div class="header-area">
+    <div class="header">
         <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    @{Html.RenderAction("TopMenu", "Home");}
-                    <!--the end Top menu-->
+            <div class="header-top">
+                <div class="logo">
+                    <a href="~/Content/Assets/index.html">N-AIR</a>
                 </div>
-
-                <div class="col-md-4">
-                    <div class="header-right">
-                        <ul class="list-unstyled list-inline">
-                            <li class="dropdown dropdown-small">
-                                <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#">
-                                    <span class="key">currency :</span><span class="value">USD </span><b class="caret"></b>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">USD</a></li>
-                                    <li><a href="#">INR</a></li>
-                                    <li><a href="#">GBP</a></li>
-                                </ul>
-                            </li>
-
-                            <li class="dropdown dropdown-small">
-                                <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#">
-                                    <span class="key">language :</span><span class="value">English </span><b class="caret"></b>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">English</a></li>
-                                    <li><a href="#">French</a></li>
-                                    <li><a href="#">German</a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- End header area -->
-
-    <div class="site-branding-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="logo">
-                        <h1><a href="#"><img src="~/Content/Assets/img/logo.png"></a></h1>
-                    </div>
-                </div>
-
-                <div class="col-sm-6">
-                    <div class="shopping-item">
-                        <a href="cart.html">
-                            Cart - <span class="cart-amunt">$100</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span>
+                <div class="login-bars">
+                    <a class="btn btn-default log-bar" href="~/Content/Assets/register.html" role="button">Sign up</a>
+                    <a class="btn btn-default log-bar" href="~/Content/Assets/signup.html" role="button">Login</a>
+                    <div class="cart box_1">
+                        <a href="~/Content/Assets/checkout.html">
+                            <h3>
+                                <div class="total">
+                                    <span class="simpleCart_total"></span>(<span id="simpleCart_quantity" class="simpleCart_quantity"></span>)
+                                </div>
+                            </h3>
                         </a>
+                        <p><a href="~/Content/Assets/javascript:;" class="simpleCart_empty">Empty Cart</a></p>
+                        <div class="clearfix"> </div>
                     </div>
                 </div>
+                <div class="clearfix"></div>
             </div>
+            <!---menu-----bar--->
+            <div class="header-botom">
+                <div class="content white">
+                    <nav class="navbar navbar-default nav-menu" role="navigation">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="clearfix"></div>
+                        <!--/.navbar-header-->
+
+                        <div class="collapse navbar-collapse collapse-pdng" id="bs-example-navbar-collapse-1">
+                            <ul class="nav navbar-nav nav-font">
+                                <li class="dropdown">
+                                    <a href="~/Content/Assets/#" class="dropdown-toggle" data-toggle="dropdown">Shop<b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="~/Content/Assets/products.html">Shoes</a></li>
+                                        <li><a href="~/Content/Assets/products.html">Tees</a></li>
+                                        <li><a href="~/Content/Assets/products.html">Tops</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="~/Content/Assets/products.html">Tracks</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="~/Content/Assets/products.html">Gear</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="~/Content/Assets/#" class="dropdown-toggle" data-toggle="dropdown">Men<b class="caret"></b></a>
+                                    <ul class="dropdown-menu multi-column columns-3">
+                                        <div class="row">
+                                            <div class="col-sm-4 menu-img-pad">
+                                                <ul class="multi-column-dropdown">
+                                                    <li><a href="~/Content/Assets/products.html">Joggers</a></li>
+                                                    <li><a href="~/Content/Assets/products.html">Foot Ball</a></li>
+                                                    <li><a href="~/Content/Assets/products.html">Cricket</a></li>
+                                                    <li class="divider"></li>
+                                                    <li><a href="~/Content/Assets/products.html">Tennis</a></li>
+                                                    <li class="divider"></li>
+                                                    <li><a href="~/Content/Assets/products.html">Casual</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-sm-4 menu-img-pad">
+                                                <a href="~/Content/Assets/#"><img src="~/Content/Assets/images/menu1.jpg" alt="/" class="img-rsponsive men-img-wid" /></a>
+                                            </div>
+                                            <div class="col-sm-4 menu-img-pad">
+                                                <a href="~/Content/Assets/#"><img src="~/Content/Assets/images/menu2.jpg" alt="/" class="img-rsponsive men-img-wid" /></a>
+                                            </div>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="~/Content/Assets/#" class="dropdown-toggle" data-toggle="dropdown">Women<b class="caret"></b></a>
+                                    <ul class="dropdown-menu multi-column columns-2">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                <ul class="multi-column-dropdown">
+                                                    <li><a href="~/Content/Assets/products.html">Tops</a></li>
+                                                    <li><a href="~/Content/Assets/products.html">Bottoms</a></li>
+                                                    <li><a href="~/Content/Assets/products.html">Yoga Pants</a></li>
+                                                    <li class="divider"></li>
+                                                    <li><a href="~/Content/Assets/products.html">Sports</a></li>
+                                                    <li class="divider"></li>
+                                                    <li><a href="~/Content/Assets/products.html">Gym</a></li>
+                                                </ul>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <a href="~/Content/Assets/#"><img src="~/Content/Assets/images/menu3.jpg" alt="/" class="img-rsponsive men-img-wid" /></a>
+                                            </div>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="~/Content/Assets/#" class="dropdown-toggle" data-toggle="dropdown">kids<b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="~/Content/Assets/products.html">Tees</a></li>
+                                        <li><a href="~/Content/Assets/products.html">Shorts</a></li>
+                                        <li><a href="~/Content/Assets/products.html">Gear</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="~/Content/Assets/products.html">Watches</a></li>
+                                        <li class="divider"></li>
+                                        <li><a href="~/Content/Assets/products.html">Shoes</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="~/Content/Assets/contact.html">Catch</a></li>
+                                <div class="clearfix"></div>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <!--/.navbar-collapse-->
+                        <div class="clearfix"></div>
+                    </nav>
+                    <!--/.navbar-->
+                    <div class="clearfix"></div>
+                </div>
+                <!--/.content--->
+            </div>
+            <!--header-bottom-->
         </div>
-    </div> <!-- End site branding area -->
-
-    @{Html.RenderAction("MainMenu", "Home");} <!-- End mainmenu area -->
-
+    </div>
     @RenderBody()
-
-    <div class="footer-top-area">
-        <div class="zigzag-bottom"></div>
+    <div class="footer-grid">
         <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <div class="footer-about-us">
-                        <h2>u<span>Stora</span></h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis sunt id doloribus vero
-                            quam laborum quas alias dolores blanditiis iusto consequatur, modi aliquid eveniet eligendi
-                            iure eaque ipsam iste, pariatur omnis sint! Suscipit, debitis, quisquam. Laborum commodi
-                            veritatis magni at?
-                        </p>
-                        <div class="footer-social">
-                            <a href="#" target="_blank"><i class="fa fa-facebook"></i></a>
-                            <a href="#" target="_blank"><i class="fa fa-twitter"></i></a>
-                            <a href="#" target="_blank"><i class="fa fa-youtube"></i></a>
-                            <a href="#" target="_blank"><i class="fa fa-linkedin"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="footer-menu">
-                        <h2 class="footer-wid-title">User Navigation </h2>
-                        <ul>
-                            <li><a href="#">My account</a></li>
-                            <li><a href="#">Order history</a></li>
-                            <li><a href="#">Wishlist</a></li>
-                            <li><a href="#">Vendor contact</a></li>
-                            <li><a href="#">Front page</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="footer-menu">
-                        <h2 class="footer-wid-title">Categories</h2>
-                        <ul>
-                            <li><a href="#">Mobile Phone</a></li>
-                            <li><a href="#">Home accesseries</a></li>
-                            <li><a href="#">LED TV</a></li>
-                            <li><a href="#">Computer</a></li>
-                            <li><a href="#">Gadets</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="col-md-3 col-sm-6">
-                    <div class="footer-newsletter">
-                        <h2 class="footer-wid-title">Newsletter</h2>
-                        <p>
-                            Sign up to our newsletter and get exclusive deals you wont find anywhere else straight to
-                            your inbox!
-                        </p>
-                        <div class="newsletter-form">
-                            <form action="#">
-                                <input type="email" placeholder="Type your email">
-                                <input type="submit" value="Subscribe">
-                            </form>
-                        </div>
+            <div class="col-md-2 re-ft-grd">
+                <h3>Categories</h3>
+                <ul class="categories">
+                    <li><a href="~/Content/Assets/#">Men</a></li>
+                    <li><a href="~/Content/Assets/#">Women</a></li>
+                    <li><a href="~/Content/Assets/#">Kids</a></li>
+                    <li><a href="~/Content/Assets/#">Formal</a></li>
+                    <li><a href="~/Content/Assets/#">Casuals</a></li>
+                    <li><a href="~/Content/Assets/#">Sports</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 re-ft-grd">
+                <h3>Short links</h3>
+                <ul class="shot-links">
+                    <li><a href="~/Content/Assets/#">Contact us</a></li>
+                    <li><a href="~/Content/Assets/#">Support</a></li>
+                    <li><a href="~/Content/Assets/#">Delivery</a></li>
+                    <li><a href="~/Content/Assets/#">Return Policy</a></li>
+                    <li><a href="~/Content/Assets/#">Terms & conditions</a></li>
+                    <li><a href="~/Content/Assets/contact.html">Sitemap</a></li>
+                </ul>
+            </div>
+            <div class="col-md-6 re-ft-grd">
+                <h3>Social</h3>
+                <ul class="social">
+                    <li><a href="~/Content/Assets/#" class="fb">facebook</a></li>
+                    <li><a href="~/Content/Assets/#" class="twt">twitter</a></li>
+                    <li><a href="~/Content/Assets/#" class="gpls">g+ plus</a></li>
+                    <div class="clearfix"></div>
+                </ul>
+            </div>
+            <div class="col-md-2 re-ft-grd">
+                <div class="bt-logo">
+                    <div class="logo">
+                        <a href="~/Content/Assets/index.html" class="ft-log">N-AIR</a>
                     </div>
                 </div>
             </div>
+            <div class="clearfix"></div>
         </div>
-    </div> <!-- End footer top area -->
-
-    <div class="footer-bottom-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="copyright">
-                        <p>
-                            &copy; 2015 uCommerce. All Rights Reserved. <a href="http://www.freshdesignweb.com"
-                                                                           target="_blank">freshDesignweb.com</a>
-                        </p>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="footer-card-icon">
-                        <i class="fa fa-cc-discover"></i>
-                        <i class="fa fa-cc-mastercard"></i>
-                        <i class="fa fa-cc-paypal"></i>
-                        <i class="fa fa-cc-visa"></i>
-                    </div>
-                </div>
+        <div class="copy-rt">
+            <div class="container">
+                <p>&copy;   2015 N-AIR All Rights Reserved. Design by <a href="~/Content/Assets/http://www.w3layouts.com">w3layouts</a></p>
             </div>
         </div>
-    </div> <!-- End footer bottom area -->
-    <!-- Latest jQuery form server -->
-    <script src="https://code.jquery.com/jquery.min.js"></script>
-
-    <!-- Bootstrap JS form CDN -->
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-
-    <!-- jQuery sticky menu -->
-    <script src="~/Content/Assets/js/owl.carousel.min.js"></script>
-    <script src="~/Content/Assets/js/jquery.sticky.js"></script>
-
-    <!-- jQuery easing -->
-    <script src="~/Content/Assets/js/jquery.easing.1.3.min.js"></script>
-
-    <!-- Main Script -->
-    <script src="~/Content/Assets/js/main.js"></script>
-
-    <!-- Slider -->
-    <script type="text/javascript" src="~/Content/Assets/js/bxslider.min.js"></script>
-    <script type="text/javascript" src="~/Content/Assets/js/script.slider.js"></script>
+    </div>
 </body>
-
 </html>
